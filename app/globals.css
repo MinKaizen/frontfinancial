@@ -10,6 +10,14 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Custom palette from provided image */
+  --color-royal-navy: #3f404f;
+  --color-soft-navy: #71717f;
+  --color-tan: #b2aea7;
+  --color-tan-light: #c7c5c0;
+  --color-off-white: #d9d9d9;
+  --color-charcoal: #393838;
 }
 
 @media (prefers-color-scheme: dark) {
