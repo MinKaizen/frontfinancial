@@ -11,7 +11,7 @@ export default function EmailOnlyForm() {
     if (!email) return;
     setStatus('loading');
 
-    const res = await fetch('/api/email-lead', {
+    const res = await fetch('/api/email-form', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email }),
