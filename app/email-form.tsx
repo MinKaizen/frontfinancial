@@ -51,6 +51,17 @@ export default function EmailForm() {
           {status === 'loading' ? 'Sending…' : 'Submit'}
         </button>
       </div>
+
+      {status === 'ok' && (
+        <p className="mt-2 text-sm italic text-green-600" role="status">
+          Thank you. We’ll be in touch shortly.
+        </p>
+      )}
+      {status === 'err' && (
+        <p className="mt-2 text-sm italic text-red-600" role="alert">
+          Sorry, something went wrong. Please try again.
+        </p>
+      )}
     </form>
   );
 }
