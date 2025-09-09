@@ -1,4 +1,3 @@
-import Image from "next/image";
 import EmailForm from "./email-form";
 
 export function ContactSection() {
@@ -18,7 +17,9 @@ export function ContactSection() {
             </p>
             <EmailForm />
           </div>
-          <div className="self-start bg-tan aspect-square w-full md:w-[1000px] md:max-w-[500px] mb-15"></div>
+          <div className="self-start w-full md:w-[1000px] md:max-w-[500px] mb-15 aspect-[3/2] lg:aspect-[10/11] relative overflow-hidden">
+            <video className="absolute inset-0 w-full h-full object-cover filter grayscale" src="/metropolis.mp4" autoPlay loop muted playsInline />
+          </div>
         </div>
       </div>
     </div>
