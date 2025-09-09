@@ -23,8 +23,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-royal-navy);
+  --foreground: white;
 }
 
 @theme inline {
@@ -40,13 +40,6 @@
   --color-tan-light: #c7c5c0;
   --color-off-white: #d9d9d9;
   --color-charcoal: #393838;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: var(--color-royal-navy);
-    --foreground: white;
-  }
 }
 
 body {
