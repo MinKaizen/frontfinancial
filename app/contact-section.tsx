@@ -8,7 +8,7 @@ export function ContactSection() {
           <div className="grid gap-15">
             <h2 className="uppercase text-base leading-snug">
               Contact us <br />
-              Available Whenever you need us<br />
+              Available Whenever you need us<br className="hidden sm:inline-block" />
               - 365 days a year, 366 days on leap years.
             </h2>
             <p className="lg:max-w-[32rem] text-lg italic leading-snug">
