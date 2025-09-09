@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-export default function EmailOnlyForm() {
+export default function EmailForm() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'ok' | 'err'>('idle');
 

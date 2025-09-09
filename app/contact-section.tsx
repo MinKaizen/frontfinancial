@@ -1,5 +1,5 @@
 import Image from "next/image";
-import EmailOnlyForm from "./email-only-form";
+import EmailForm from "./email-form";
 
 export function ContactSection() {
   return (
@@ -16,7 +16,7 @@ export function ContactSection() {
               We keep it simple: clear conversations, decisive action, lasting impact.
               Across residential, commercial, private, and business finance, we deliver tailored solutions that move you forward. With deep market expertise, trusted networks, and a sharp strategic lens, we cut through the complexity so you can focus on what matters most: results.
             </p>
-            <EmailOnlyForm />
+            <EmailForm />
           </div>
           <div className="self-start bg-tan aspect-square w-full md:w-[1000px] md:max-w-[500px] mb-15"></div>
         </div>
