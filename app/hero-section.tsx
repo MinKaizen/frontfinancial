@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function HeroSection() {
   return (
-    <div className="grid justify-items-center py-10 px-5 relative min-h-[100vh] grid-rows-[auto_1fr_auto] items-center">
+    <div className="grid justify-items-center py-15 px-10 relative min-h-[600px] md:min-h-[800px] lg:min-h-[100vh] grid-rows-[auto_1fr_auto] items-center">
       <Image
         className="w-full h-full absolute top-0 left-0 -z-1"
         src="/home-hero-image.png"
@@ -19,7 +19,7 @@ export function HeroSection() {
         height={15}
         priority
       />
-      <p className="uppercase text-lg font-heading text-center">sharp-minded, never-sleeping, tech-driven financial partners <br className="hidden md:inline-block" />who make your money work as hard as we do.</p>
+      <p className="uppercase text-sm md:text-base lg:text-lg font-heading text-center">sharp-minded, never-sleeping, tech-driven financial partners <br className="hidden lg:inline-block" />who make your money work as hard as we do.</p>
       <Image
         className="w-full max-w-[89px] h-auto"
         src="/frontfinancial-logo-monogram-icon-white.svg"
