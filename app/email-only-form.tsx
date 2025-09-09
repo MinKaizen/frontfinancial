@@ -33,7 +33,7 @@ export default function EmailOnlyForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="w-full max-w-3xl">
+    <form onSubmit={onSubmit} className="w-full max-w-sm lg:max-w-3xl">
       <div className="flex items-center justify-between border-b py-3">
         <input
           type="email"
