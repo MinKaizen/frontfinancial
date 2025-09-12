@@ -2,15 +2,7 @@ import Image from "next/image";
 
 export function HeroSection() {
   return (
-    <div className="grid justify-items-center py-15 px-10 relative min-h-[600px] md:min-h-[800px] lg:min-h-[100vh] grid-rows-[auto_1fr_auto] items-center">
-      <Image
-        className="w-full h-full absolute top-0 left-0 -z-1"
-        src="/home-hero-image.png"
-        alt="Hero Image"
-        width={1920}
-        height={1080}
-        priority
-      />
+    <div className="grid justify-items-center py-15 px-10 relative min-h-[600px] md:min-h-[800px] lg:min-h-[100vh] grid-rows-[auto_1fr_auto] items-center bg-[url('/home-hero-image.png')] bg-cover bg-center bg-no-repeat">
       <Image
         className="w-full max-w-[220px] h-auto"
         src="/frontfinancial-logo-primary-white.svg"
