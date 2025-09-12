@@ -1,4 +1,5 @@
 "use client";
+import { metaPixel } from "@/utils/metaPixel";
 import { useEffect } from "react";
 
 type Fbq = {
@@ -24,8 +25,8 @@ export function MetaPixel() {
     if (typeof window === "undefined" || !pixelId) return;
     if (window.fbq) {
       // already loaded
-      window.fbq("init", pixelId);
-      window.fbq("track", "PageView");
+      metaPixel("init", pixelId)
+      metaPixel("track", "PageView")
       return;
     }
 
