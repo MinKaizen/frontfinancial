@@ -35,11 +35,22 @@ const HeroSection = () => {
   return (
     <section 
       ref={heroRef} 
-      className="relative min-h-[100vh] flex flex-col items-center justify-center px-4 py-12 overflow-hidden bg-[url('/home-hero-image.png')] bg-cover bg-center bg-no-repeat" 
+      className="relative min-h-[100vh] flex flex-col items-center justify-center px-4 py-12 overflow-hidden" 
       id="hero"
     >
-      {/* Background overlay */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-b from-[#2a2a38ee] to-[#3f404fee]"></div>
+      {/* Background video with overlay */}
+      <div className="absolute inset-0 z-0">
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          className="object-cover w-full h-full"
+        >
+          <source src="/metropolis.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2a2a38cc] to-[#3f404fee]"></div>
+      </div>
       
       {/* Floating elements */}
       <div 
