@@ -1,5 +1,6 @@
 'use client';
 
+import { metaPixel } from '@/utils/metaPixel';
 import { useState } from 'react';
 
 export default function EmailForm() {
@@ -20,12 +21,7 @@ export default function EmailForm() {
 
     if (res.ok) {
       setStatus('ok');
-      // Fire Meta Pixel event (if pixel is present on the page)
-      if (typeof window !== 'undefined' && (window as any).fbq) {
-        (window as any).fbq('track', 'Lead', { email });
-      } else {
-        console.warn('No meta pixel was found! "Lead" event was not sent')
-      }
+      metaPixel('track', 'Lead', {email})
       setEmail('');
     } else {
       setStatus('err');
