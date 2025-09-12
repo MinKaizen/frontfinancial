@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { HubspotTrackingScript } from "./hubspot-tracking-script";
+import { HubspotTrackingScript } from "@/components/scripts/hubspot-tracking-script";
 import Head from "next/head"
-import { MetaPixel } from "./meta-pixel";
+import { MetaPixel } from "@/components/scripts/meta-pixel";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
