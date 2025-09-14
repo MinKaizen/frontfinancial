@@ -54,7 +54,7 @@ const HeroSection = () => {
           </div>
           
           <h1 
-            className={`text-3xl md:text-5xl lg:text-7xl uppercase font-heading font-bold mb-8 tracking-wide leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-[var(--color-tan-light)] transition-all duration-700 ${heroInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+            className={`text-lg md:text-2xl lg:text-4xl uppercase font-heading font-bold mb-8 tracking-wide leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-[var(--color-tan-light)] transition-all duration-700 ${heroInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
             style={{ transitionDelay: '200ms' }}
           >
             When the ATO is knocking,<br />your property could be the solution
