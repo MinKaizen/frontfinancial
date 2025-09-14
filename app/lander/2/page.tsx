@@ -38,17 +38,6 @@ const HeroSection = () => {
       className="relative min-h-[100vh] flex flex-col items-center justify-center px-4 py-12 overflow-hidden" 
       id="hero"
     >
-      {/* Floating elements */}
-      <div 
-        className="absolute w-32 h-32 rounded-full bg-[var(--color-tan)] opacity-10 top-1/4 left-1/4 animate-pulse"
-        style={{ animationDuration: '7s' }}
-      />
-      
-      <div 
-        className="absolute w-24 h-24 rounded-full bg-[var(--color-soft-navy)] opacity-10 bottom-1/4 right-1/3 animate-pulse"
-        style={{ animationDuration: '10s', animationDelay: '2s' }}
-      />
-
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto">
         <div
