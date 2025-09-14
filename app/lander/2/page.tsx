@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
+import ComparisonTable from '@/app/components/comparison-table';
 
 // Custom hook for intersection observer
 const useInView = (options = {}) => {
@@ -43,7 +44,7 @@ const HeroSection = () => {
         <div
           className={`flex flex-col items-center text-center transition-opacity duration-1000 ${heroInView ? 'opacity-100' : 'opacity-0'}`}
         >
-          <div className="mb-8 mx-auto">
+          <div className="w-[180px] h-auto lg:w-[220px] mb-8 mx-auto">
             <Image
               src="/frontfinancial-logo-primary-white.svg"
               alt="Front Financial"
@@ -54,14 +55,14 @@ const HeroSection = () => {
           </div>
           
           <h1 
-            className={`text-lg md:text-2xl lg:text-4xl uppercase font-heading font-bold mb-8 tracking-wide leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-[var(--color-tan-light)] transition-all duration-700 ${heroInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+            className={`text-lg md:text-2xl lg:text-4xl uppercase font-heading font-bold mb-8  leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-[var(--color-tan-light)] transition-all duration-700 ${heroInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
             style={{ transitionDelay: '200ms' }}
           >
             When the ATO is knocking,<br />your property could be the solution
           </h1>
           
           <p 
-            className={`text-lg md:text-xl mb-12 max-w-3xl mx-auto text-[var(--color-off-white)] transition-all duration-700 ${heroInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+            className={`text-base md:text-lg mb-12 max-w-3xl mx-auto text-[var(--color-off-white)] transition-all duration-700 ${heroInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
             style={{ transitionDelay: '400ms' }}
           >
             Preserve your business and personal assets with our equity solution. 
@@ -74,11 +75,10 @@ const HeroSection = () => {
           >
             <a 
               href="#contact" 
-              className="inline-block px-10 py-5 bg-gradient-to-r from-[var(--color-tan)] to-[var(--color-tan-light)] text-[var(--color-royal-navy)] font-heading font-bold uppercase tracking-wider rounded-lg shadow-lg transition-all"
+              className="text-sm inline-block px-6 py-4 bg-gradient-to-r from-[var(--color-tan)] to-[var(--color-tan-light)] text-[var(--color-royal-navy)] font-heading font-bold uppercase transition-all"
             >
-              Get Started
+              check eligibility now
             </a>
-            <div className="absolute -inset-1 bg-gradient-to-r from-[var(--color-tan)] to-[var(--color-tan-light)] rounded-lg blur opacity-30 -z-10 group-hover:opacity-50 transition-all"></div>
           </div>
         </div>
       </div>
@@ -93,24 +93,24 @@ const HowItWorksSection = () => {
   
   const steps = [
     {
-      title: "Free Consultation",
-      description: "We assess your situation and determine if our equity solution is right for you with a confidential, no-obligation discussion.",
-      icon: "/file.svg"
+      title: "Assessment",
+      description: "We assess your property equity",
+      icon: "/icon-house.svg"
     },
     {
-      title: "Property Valuation",
-      description: "We provide a fair market valuation of your property assets and explain how they can be leveraged to settle your tax debt.",
-      icon: "/window.svg"
+      title: "Access",
+      description: "We show you how to access equity, even if banks have said no",
+      icon: "/icon-key.svg"
     },
     {
-      title: "Solution Design",
-      description: "Our experts create a tailored equity solution that protects your business operations while addressing ATO obligations.",
-      icon: "/globe.svg"
+      title: "Funding",
+      description: "We secure funding against that equity through specialist lenders",
+      icon: "/icon-arrow-increase.svg"
     },
     {
-      title: "Implementation",
-      description: "We handle all negotiations with the ATO and implement the solution, allowing you to continue operating with confidence.",
-      icon: "/file.svg"
+      title: "Continue",
+      description: "You use the loan to clear ATO debt and keep your business trading",
+      icon: "/icon-check-shield.svg"
     }
   ];
 
@@ -125,7 +125,7 @@ const HowItWorksSection = () => {
           className={`transition-all duration-1000 ${sectionInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           <h2 
-            className="text-3xl md:text-5xl font-heading text-center mb-16 uppercase tracking-wide"
+            className="text-3xl md:text-5xl font-heading text-center mb-16 uppercase "
           >
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-tan)] to-[var(--color-tan-light)]">
               How It Works
@@ -140,14 +140,14 @@ const HowItWorksSection = () => {
                   <div 
                     key={index}
                     onClick={() => setActiveStep(index)}
-                    className={`p-6 rounded-xl cursor-pointer transition-all hover:scale-102 active:scale-98 ${
+                    className={`hidden lg:block p-6 cursor-pointer transition-all hover:scale-102 active:scale-98 ${
                       activeStep === index 
-                        ? 'bg-gradient-to-r from-[var(--color-royal-navy)] to-[#2a2a38] shadow-lg border-l-4 border-[var(--color-tan)]' 
+                        ? 'bg-royal-navy border-l-4 border-[var(--color-tan)]' 
                         : 'bg-[#2a2a38] hover:bg-[#323244]'
                     }`}
                   >
                     <div className="flex items-center">
-                      <div className={`w-10 h-10 rounded-full flex items-center justify-center mr-4 ${
+                      <div className={`w-10 h-10 flex items-center justify-center mr-4 ${
                         activeStep === index ? 'bg-[var(--color-tan)]' : 'bg-[var(--color-soft-navy)]'
                       }`}>
                         <span className="font-heading font-bold text-[var(--color-royal-navy)]">0{index + 1}</span>
@@ -164,8 +164,31 @@ const HowItWorksSection = () => {
             </div>
             
             {/* Step details */}
-            <div className={`order-1 lg:order-2 transition-all duration-700 ${sectionInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              <div className="bg-[var(--color-royal-navy)] p-8 rounded-2xl shadow-2xl h-full">
+            <div className="lg:hidden grid gap-8 mx-auto max-w-4xl">
+              {steps.map((step, index) => (
+                <div key={index} className={`order-1 lg:order-2 transition-all duration-700 ${sectionInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+                  <div className="bg-[var(--color-royal-navy)] p-8 h-full">
+                    <div
+                      key={index}
+                      className="flex flex-col items-center text-center h-full transition-opacity duration-300"
+                    >
+                      <div className="w-14 h-14 mb-6 flex items-center justify-center bg-[var(--color-tan)] rounded-full">
+                        <Image 
+                          src={steps[index].icon} 
+                          alt={steps[index].title} 
+                          width={30} 
+                          height={30}
+                        />
+                      </div>
+                      <h3 className="text-lg font-heading mb-4">{index+1}. {steps[index].title}</h3>
+                      <p className="text-[var(--color-off-white)] text-base">{steps[index].description}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className={`hidden lg:block order-1 lg:order-2 transition-all duration-700 ${sectionInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+              <div className="bg-[var(--color-royal-navy)] p-8 h-full">
                 <div
                   key={activeStep}
                   className="flex flex-col items-center text-center h-full transition-opacity duration-300"
@@ -249,7 +272,7 @@ const ComparisonSection = () => {
           className={`transition-all duration-1000 ${sectionInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           <h2 
-            className="text-3xl md:text-5xl font-heading text-center mb-6 uppercase tracking-wide"
+            className="text-3xl md:text-5xl font-heading text-center mb-6 uppercase "
           >
             Why An Equity Solution Is The <span className="text-[var(--color-tan)]">Better Option</span>
           </h2>
@@ -261,57 +284,7 @@ const ComparisonSection = () => {
             unlike the devastating effects of liquidation.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12">
-            <div 
-              className={`bg-gradient-to-br from-[var(--color-tan)] to-[var(--color-tan-light)] p-1 rounded-xl shadow-xl transition-all duration-700 ${sectionInView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
-            >
-              <div className="bg-[var(--color-royal-navy)] p-8 rounded-lg h-full">
-                <h3 className="text-2xl font-heading mb-6 text-center text-[var(--color-tan)]">
-                  Equity Solution
-                </h3>
-                <ul className="space-y-4">
-                  {comparisonData.map((item, index) => (
-                    <li 
-                      key={index}
-                      className={`flex items-start transition-all duration-500 ${sectionInView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}
-                      style={{ transitionDelay: `${index * 100}ms` }}
-                    >
-                      <span className="text-[var(--color-tan)] text-xl mr-3">✓</span>
-                      <div>
-                        <h4 className="font-heading text-lg mb-1">{item.aspect}</h4>
-                        <p className="text-[var(--color-off-white)]">{item.equity}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            
-            <div 
-              className={`bg-gradient-to-br from-[var(--color-soft-navy)] to-[#555565] p-1 rounded-xl shadow-xl transition-all duration-700 ${sectionInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}
-            >
-              <div className="bg-[var(--color-royal-navy)] p-8 rounded-lg h-full">
-                <h3 className="text-2xl font-heading mb-6 text-center text-[var(--color-soft-navy)]">
-                  Liquidation
-                </h3>
-                <ul className="space-y-4">
-                  {comparisonData.map((item, index) => (
-                    <li 
-                      key={index}
-                      className={`flex items-start transition-all duration-500 ${sectionInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}
-                      style={{ transitionDelay: `${index * 100}ms` }}
-                    >
-                      <span className="text-red-500 text-xl mr-3">✗</span>
-                      <div>
-                        <h4 className="font-heading text-lg mb-1">{item.aspect}</h4>
-                        <p className="text-[var(--color-off-white)]">{item.liquidation}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
+          <ComparisonTable></ComparisonTable>
         </div>
       </div>
     </section>
@@ -360,7 +333,7 @@ const TestimonialsSection = () => {
           className={`transition-all duration-1000 ${sectionInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           <h2 
-            className="text-3xl md:text-5xl font-heading text-center mb-20 uppercase tracking-wide"
+            className="text-3xl md:text-5xl font-heading text-center mb-20 uppercase "
           >
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-tan)] to-[var(--color-tan-light)]">
               What Our Clients Say
@@ -372,7 +345,7 @@ const TestimonialsSection = () => {
               "
             </div>
             
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-[var(--color-royal-navy)]">
+            <div className="relative overflow-hidden bg-[var(--color-royal-navy)]">
               <div className="flex flex-col md:flex-row h-full">
                 {/* Decorative element */}
                 <div className="w-full md:w-1/3 bg-gradient-to-br from-[var(--color-tan)] to-[var(--color-tan-light)] p-8 flex items-center justify-center">
@@ -483,7 +456,7 @@ const FAQSection = () => {
           className={`transition-all duration-1000 ${sectionInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           <h2 
-            className="text-3xl md:text-5xl font-heading text-center mb-20 uppercase tracking-wide"
+            className="text-3xl md:text-5xl font-heading text-center mb-20 uppercase "
           >
             Frequently Asked <span className="text-[var(--color-tan)]">Questions</span>
           </h2>
@@ -492,7 +465,7 @@ const FAQSection = () => {
             {faqs.map((faq, index) => (
               <div 
                 key={index}
-                className={`rounded-xl overflow-hidden shadow-lg transition-all duration-500 ${
+                className={`overflow-hidden transition-all duration-500 ${
                   openIndex === index ? 'bg-[var(--color-royal-navy)]' : 'bg-[#2a2a38]'
                 } ${sectionInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 style={{ transitionDelay: `${index * 100}ms` }}
@@ -589,7 +562,7 @@ const ContactForm = () => {
           className={`transition-all duration-1000 ${sectionInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           <h2 
-            className="text-3xl md:text-5xl font-heading text-center mb-6 uppercase tracking-wide"
+            className="text-3xl md:text-5xl font-heading text-center mb-6 uppercase "
           >
             Take The First Step <span className="text-[var(--color-tan)]">Towards A Solution</span>
           </h2>
@@ -601,7 +574,7 @@ const ContactForm = () => {
           </p>
 
           <div 
-            className="bg-[var(--color-royal-navy)] rounded-2xl shadow-2xl p-8 md:p-12"
+            className="bg-[var(--color-royal-navy)] p-8 md:p-12"
           >
             <form onSubmit={handleSubmit} className="space-y-8">
               {/* Name field with floating label */}
@@ -695,7 +668,7 @@ const ContactForm = () => {
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="w-full py-5 bg-gradient-to-r from-[var(--color-tan)] to-[var(--color-tan-light)] text-[var(--color-royal-navy)] font-heading font-bold uppercase tracking-wider rounded-lg shadow-lg transition-all disabled:opacity-70"
+                  className="w-full py-5 bg-gradient-to-r from-[var(--color-tan)] to-[var(--color-tan-light)] text-[var(--color-royal-navy)] font-heading font-bold uppercase r transition-all disabled:opacity-70"
                 >
                   {status === 'loading' ? (
                     <span className="flex items-center justify-center">
@@ -707,13 +680,13 @@ const ContactForm = () => {
                     </span>
                   ) : 'Request Consultation'}
                 </button>
-                <div className="absolute -inset-1 bg-gradient-to-r from-[var(--color-tan)] to-[var(--color-tan-light)] rounded-lg blur opacity-30 group-hover:opacity-50 transition-all -z-10"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-[var(--color-tan)] to-[var(--color-tan-light)] blur opacity-30 group-hover:opacity-50 transition-all -z-10"></div>
               </div>
               
               {/* Status messages */}
               {status === 'ok' && (
                 <div 
-                  className="mt-4 text-center text-green-500 bg-green-900 bg-opacity-20 p-3 rounded-lg" 
+                  className="mt-4 text-center text-green-500 bg-green-900 bg-opacity-20 p-3" 
                   role="status"
                 >
                   Thank you. We'll be in touch shortly to discuss your situation.
@@ -723,7 +696,7 @@ const ContactForm = () => {
               {status === 'err' && (
                 <div 
                   id="form-error" 
-                  className="mt-4 text-center text-red-500 bg-red-900 bg-opacity-20 p-3 rounded-lg" 
+                  className="mt-4 text-center text-red-500 bg-red-900 bg-opacity-20 p-3" 
                   role="alert"
                 >
                   Sorry, something went wrong. Please try again or call us directly.
