@@ -80,16 +80,6 @@ const HeroSection = () => {
             </a>
             <div className="absolute -inset-1 bg-gradient-to-r from-[var(--color-tan)] to-[var(--color-tan-light)] rounded-lg blur opacity-30 -z-10 group-hover:opacity-50 transition-all"></div>
           </div>
-          
-          <div
-            className="absolute bottom-10 animate-bounce"
-            style={{ animationDuration: '2s' }}
-          >
-            <a href="#how-it-works" className="flex flex-col items-center">
-              <span className="text-sm text-[var(--color-tan-light)] mb-2">Scroll to learn more</span>
-              <span className="text-[var(--color-tan)] text-2xl">↓</span>
-            </a>
-          </div>
         </div>
       </div>
     </section>
