@@ -78,18 +78,18 @@ const ContactForm = () => {
       className="py-24 md:py-32 px-4 bg-gradient-to-b from-[var(--color-charcoal)] to-[var(--color-royal-navy)]" 
       id="contact"
     >
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-2xl mx-auto">
         <div
           className={`transition-all duration-1000 ${sectionInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           <h2 
-            className="text-3xl md:text-5xl font-heading text-center mb-6 uppercase "
+            className="text-lg font-heading text-center mb-2 uppercase "
           >
             Take The First Step <span className="text-[var(--color-tan)]">Towards A Solution</span>
           </h2>
           
           <p 
-            className="text-center mb-16 text-lg text-[var(--color-off-white)]"
+            className="text-center mb-12 text-lg text-[var(--color-off-white)]"
           >
             Complete the form below for a confidential, no-obligation consultation with our team.
           </p>
@@ -189,11 +189,11 @@ const ContactForm = () => {
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="w-full py-4 bg-tan-light text-[var(--color-royal-navy)] font-heading font-bold uppercase r transition-all disabled:opacity-70 text-sm hover:cursor-pointer hover:bg-tan"
+                  className="w-full py-4 bg-tan text-white font-heading font-bold uppercase r transition-all disabled:opacity-70 text-sm hover:cursor-pointer hover:bg-tan"
                 >
                   {status === 'loading' ? (
                     <span className="flex items-center justify-center">
-                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-[var(--color-royal-navy)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                       </svg>
