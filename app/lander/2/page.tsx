@@ -3,6 +3,18 @@
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import ComparisonTable from '@/app/components/comparison-table';
+import Link from 'next/link';
+
+const Cta = () => {
+  return (
+    <Link 
+      href="/equity-eligibility-form" 
+      className="text-sm inline-block px-6 py-4 bg-gradient-to-r from-[var(--color-tan)] to-[var(--color-tan-light)] text-[var(--color-royal-navy)] font-heading font-bold uppercase transition-all"
+    >
+      check eligibility now
+    </Link>
+  )
+}
 
 // Custom hook for intersection observer
 const useInView = (options = {}) => {
@@ -73,12 +85,7 @@ const HeroSection = () => {
             className={`relative hover:scale-105 active:scale-95 transition-all duration-300 ${heroInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
             style={{ transitionDelay: '600ms' }}
           >
-            <a 
-              href="#contact" 
-              className="text-sm inline-block px-6 py-4 bg-gradient-to-r from-[var(--color-tan)] to-[var(--color-tan-light)] text-[var(--color-royal-navy)] font-heading font-bold uppercase transition-all"
-            >
-              check eligibility now
-            </a>
+            <Cta />
           </div>
         </div>
       </div>
@@ -278,13 +285,17 @@ const ComparisonSection = () => {
           </h2>
           
           <p 
-            className="text-center max-w-3xl mx-auto mb-20 text-lg"
+            className="text-center max-w-3xl mx-auto mb-10 text-lg"
           >
             Our approach helps you maintain dignity and control while addressing your tax obligations,
             unlike the devastating effects of liquidation.
           </p>
 
           <ComparisonTable></ComparisonTable>
+
+          <div className="grid place-items-center mt-10">
+            <Cta />
+          </div>
         </div>
       </div>
     </section>
@@ -358,7 +369,7 @@ const TestimonialsSection = () => {
                 <div className="w-full md:w-2/3 p-8 md:p-12">
                   <div
                     key={currentIndex}
-                    className="h-full flex flex-col transition-opacity duration-300"
+                    className="flex flex-col transition-opacity duration-300"
                   >
                     <p className="italic text-lg md:text-xl mb-8">{testimonials[currentIndex].quote}</p>
                     <div className="mt-auto">
@@ -372,7 +383,7 @@ const TestimonialsSection = () => {
                   </div>
                   
                   {/* Navigation */}
-                  <div className="mt-10 flex justify-between items-center">
+                  <div className="pt-10 flex justify-between items-center">
                     <div className="flex space-x-2">
                       {testimonials.map((_, index) => (
                         <button
@@ -406,6 +417,9 @@ const TestimonialsSection = () => {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="grid place-items-center mt-10">
+            <Cta />
           </div>
         </div>
       </div>
@@ -497,6 +511,9 @@ const FAQSection = () => {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="grid place-items-center mt-10">
+            <Cta />
           </div>
         </div>
       </div>
@@ -810,7 +827,6 @@ export default function LandingPage() {
       <ComparisonSection />
       <TestimonialsSection />
       <FAQSection />
-      <ContactForm />
       <Footer />
     </>
   );
