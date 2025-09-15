@@ -457,12 +457,12 @@ const FAQSection = () => {
             Frequently Asked <span className="text-[var(--color-tan)]">Questions</span>
           </h2>
           
-          <div className="space-y-6">
+          <div className="space-y-0">
             {faqs.map((faq, index) => (
               <div 
                 key={index}
                 className={`overflow-hidden transition-all duration-500 ${
-                  openIndex === index ? 'bg-charcoal' : 'bg-soft-navy'
+                  openIndex === index ? 'bg-soft-navy' : ''
                 } ${sectionInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
@@ -472,9 +472,7 @@ const FAQSection = () => {
                   aria-expanded={openIndex === index}
                   aria-controls={`faq-answer-${index}`}
                 >
-                  <span className={openIndex === index ? 'text-[var(--color-tan)]' : ''}>
-                    {faq.question}
-                  </span>
+                  <span>{faq.question}</span>
                   <span 
                     className={`text-[var(--color-tan)] text-2xl font-light transition-transform duration-300 ${
                       openIndex === index ? 'rotate-45' : 'rotate-0'
@@ -489,7 +487,7 @@ const FAQSection = () => {
                     openIndex === index ? 'max-h-96 pb-6 opacity-100' : 'max-h-0 opacity-0'
                   }`}
                 >
-                  <p className="text-[var(--color-off-white)]">{faq.answer}</p>
+                  <p className="text-white">{faq.answer}</p>
                 </div>
               </div>
             ))}
