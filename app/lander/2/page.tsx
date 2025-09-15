@@ -124,7 +124,7 @@ const HowItWorksSection = () => {
   return (
     <section 
       ref={sectionRef} 
-      className="py-24 md:py-32 px-4 bg-tan-light text-white" 
+      className="py-24 md:py-32 px-4" 
       id="how-it-works"
     >
       <div className="max-w-7xl mx-auto">
@@ -145,12 +145,12 @@ const HowItWorksSection = () => {
                     onClick={() => setActiveStep(index)}
                     className={`hidden lg:block p-4 cursor-pointer transition-all hover:scale-101 active:scale-99 ${
                       activeStep === index 
-                        ? 'bg-tan border-l-4 border-soft-navy' 
+                        ? 'bg-soft-navy border-l-4 border-tan' 
                         : ''
                     }`}
                   >
                     <div className="flex items-center">
-                      <div className={`w-10 h-10 flex items-center justify-center mr-4 bg-soft-navy`}>
+                      <div className={`w-10 h-10 flex items-center justify-center mr-4 bg-tan`}>
                         <span className="font-heading font-bold text-white">0{index + 1}</span>
                       </div>
                       <h3 className={`font-heading text-sm transition-colors`}>
@@ -163,15 +163,15 @@ const HowItWorksSection = () => {
             </div>
             
             {/* Step details mobile */}
-            <div className="lg:hidden grid gap-8 mx-auto max-w-4xl">
+            <div className="lg:hidden grid gap-12 mx-auto max-w-4xl">
               {steps.map((step, index) => (
                 <div key={index} className={`order-1 lg:order-2 transition-all duration-700 ${sectionInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-                  <div className="bg-tan p-8 h-full">
+                  <div className="bg-soft-navy p-8 h-full">
                     <div
                       key={index}
                       className="flex flex-col items-center text-center h-full transition-opacity duration-300"
                     >
-                      <div className="w-14 h-14 mb-6 flex items-center justify-center bg-soft-navy rounded-full">
+                      <div className="w-14 h-14 mb-6 flex items-center justify-center bg-tan rounded-full">
                         <Image 
                           src={steps[index].icon} 
                           alt={steps[index].title} 
@@ -189,12 +189,12 @@ const HowItWorksSection = () => {
 
             {/* Step details desktop */}
             <div className={`w-full hidden lg:block order-1 lg:order-2 transition-all duration-700 ${sectionInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              <div className="bg-tan p-8 h-full">
+              <div className="bg-soft-navy p-8 h-full">
                 <div
                   key={activeStep}
                   className="flex flex-col items-center text-center h-full transition-opacity duration-300"
                 >
-                  <div className="w-16 h-16 mb-6 flex items-center justify-center bg-soft-navy rounded-full">
+                  <div className="w-16 h-16 mb-6 flex items-center justify-center bg-tan rounded-full">
                     <Image 
                       src={steps[activeStep].icon} 
                       alt={steps[activeStep].title} 
@@ -211,7 +211,7 @@ const HowItWorksSection = () => {
                         key={index}
                         onClick={() => setActiveStep(index)}
                         className={`w-2 h-2 rounded-full transition-all ${
-                          activeStep === index ? 'bg-royal-navy w-6' : 'bg-soft-navy'
+                          activeStep === index ? 'bg-white w-6' : 'bg-tan'
                         }`}
                         aria-label={`Go to step ${index + 1}`}
                       />
