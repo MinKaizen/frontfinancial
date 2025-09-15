@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Front Financial",
+  title: "FRONT Financial",
   description: "Sharp-minded, never-sleeping, tech-driven financial partners who make your money work as hard as we do.",
 };
 
