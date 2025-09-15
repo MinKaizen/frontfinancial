@@ -9,7 +9,7 @@ const Cta = () => {
   return (
     <Link 
       href="/equity-eligibility-form" 
-      className="text-xs inline-block px-5 py-3 bg-tan text-white font-heading font-bold uppercase transition-all"
+      className="text-xs inline-block px-5 py-3 bg-tan text-white font-heading font-bold uppercase transition-all hover:bg-tan-light cursor-pointer"
     >
       check eligibility now
     </Link>
@@ -326,7 +326,7 @@ const TestimonialsSection = () => {
   return (
     <section 
       ref={sectionRef} 
-      className="py-24 md:py-32 px-4 bg-tan-light text-white" 
+      className="py-24 md:py-32 px-4" 
       id="testimonials"
     >
       <div className="max-w-5xl mx-auto">
@@ -338,11 +338,11 @@ const TestimonialsSection = () => {
           </h2>
           
           <div className="relative">
-            <div className="relative overflow-hidden bg-tan">
+            <div className="relative overflow-hidden bg-soft-navy">
               <div className="flex flex-col md:flex-row h-full">
                 {/* Decorative element */}
-                <div className="w-full md:w-1/3 bg-gradient-to-br from-[var(--color-tan)] to-[var(--color-tan-light)] p-8 flex items-center justify-center">
-                  <div className="text-[var(--color-royal-navy)] text-9xl font-serif">
+                <div className="w-full md:w-1/3 bg-tan p-8 flex items-center justify-center">
+                  <div className="text-royal-navy text-9xl font-serif">
                     "
                   </div>
                 </div>
@@ -372,7 +372,7 @@ const TestimonialsSection = () => {
                           key={index}
                           onClick={() => setCurrentIndex(index)}
                           className={`w-2 h-2 rounded-full transition-all ${
-                            currentIndex === index ? 'bg-royal-navy w-6' : 'bg-[var(--color-soft-navy)]'
+                            currentIndex === index ? 'bg-white w-6' : 'bg-tan'
                           }`}
                           aria-label={`Go to testimonial ${index + 1}`}
                         />
@@ -382,14 +382,14 @@ const TestimonialsSection = () => {
                     <div className="flex space-x-3">
                       <button
                         onClick={prevTestimonial}
-                        className="w-10 h-10 rounded-full bg-soft-navy flex items-center justify-center text-white hover:bg-[var(--color-tan)] transition-colors hover:scale-110 active:scale-95"
+                        className="w-10 h-10 rounded-full bg-tan flex items-center justify-center text-white hover:bg-tan-light transition-colors hover:scale-110 active:scale-95"
                         aria-label="Previous testimonial"
                       >
                         ←
                       </button>
                       <button
                         onClick={nextTestimonial}
-                        className="w-10 h-10 rounded-full bg-soft-navy flex items-center justify-center text-white hover:bg-[var(--color-tan)] transition-colors hover:scale-110 active:scale-95"
+                        className="w-10 h-10 rounded-full bg-tan flex items-center justify-center text-white hover:bg-tan-light transition-colors hover:scale-110 active:scale-95"
                         aria-label="Next testimonial"
                       >
                         →
