@@ -2,14 +2,14 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
-import ComparisonTable from '@/app/components/comparison-table';
+import ComparisonTable from '@/components/comparison-table';
 import Link from 'next/link';
 
 const Cta = () => {
   return (
     <Link 
       href="/equity-eligibility-form" 
-      className="text-sm inline-block px-6 py-4 bg-gradient-to-r from-[var(--color-tan)] to-[var(--color-tan-light)] text-[var(--color-royal-navy)] font-heading font-bold uppercase transition-all"
+      className="text-xs inline-block px-5 py-3 bg-tan text-white font-heading font-bold uppercase transition-all"
     >
       check eligibility now
     </Link>
@@ -62,19 +62,19 @@ const HeroSection = () => {
               alt="Front Financial"
               width={220}
               height={50}
-              className="mb-8 mx-auto"
+              className="mb-16 mx-auto"
             />
           </div>
           
           <h1 
-            className={`text-lg md:text-2xl lg:text-4xl uppercase font-heading font-bold mb-8  leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-[var(--color-tan-light)] transition-all duration-700 ${heroInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+            className={`text-lg md:text-2xl lg:text-4xl uppercase font-heading font-bold mb-6  leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-[var(--color-tan-light)] transition-all duration-700 ${heroInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
             style={{ transitionDelay: '200ms' }}
           >
             When the ATO is knocking,<br />your property could be the solution
           </h1>
           
           <p 
-            className={`text-base md:text-lg mb-12 max-w-3xl mx-auto text-[var(--color-off-white)] transition-all duration-700 ${heroInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+            className={`text-base md:text-lg mb-16 max-w-3xl mx-auto text-[var(--color-off-white)] transition-all duration-700 ${heroInView ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
             style={{ transitionDelay: '400ms' }}
           >
             Preserve your business and personal assets with our equity solution. 
@@ -124,44 +124,36 @@ const HowItWorksSection = () => {
   return (
     <section 
       ref={sectionRef} 
-      className="py-24 md:py-32 px-4 bg-[var(--color-charcoal)]" 
+      className="py-24 md:py-32 px-4 bg-tan-light text-white" 
       id="how-it-works"
     >
       <div className="max-w-7xl mx-auto">
         <div
           className={`transition-all duration-1000 ${sectionInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
-          <h2 
-            className="text-3xl md:text-5xl font-heading text-center mb-16 uppercase "
-          >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-tan)] to-[var(--color-tan-light)]">
-              How It Works
-            </span>
+          <h2 className="text-lg font-heading text-center mb-16 uppercase">
+            How It Works
           </h2>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-25 items-center max-w-6xl mx-auto">
             {/* Steps navigation */}
             <div className={`order-2 lg:order-1 transition-all duration-700 ${sectionInView ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {steps.map((step, index) => (
                   <div 
                     key={index}
                     onClick={() => setActiveStep(index)}
-                    className={`hidden lg:block p-6 cursor-pointer transition-all hover:scale-102 active:scale-98 ${
+                    className={`hidden lg:block p-4 cursor-pointer transition-all hover:scale-101 active:scale-99 ${
                       activeStep === index 
-                        ? 'bg-royal-navy border-l-4 border-[var(--color-tan)]' 
-                        : 'bg-[#2a2a38] hover:bg-[#323244]'
+                        ? 'bg-tan border-l-4 border-soft-navy' 
+                        : ''
                     }`}
                   >
                     <div className="flex items-center">
-                      <div className={`w-10 h-10 flex items-center justify-center mr-4 ${
-                        activeStep === index ? 'bg-[var(--color-tan)]' : 'bg-[var(--color-soft-navy)]'
-                      }`}>
-                        <span className="font-heading font-bold text-[var(--color-royal-navy)]">0{index + 1}</span>
+                      <div className={`w-10 h-10 flex items-center justify-center mr-4 bg-soft-navy`}>
+                        <span className="font-heading font-bold text-white">0{index + 1}</span>
                       </div>
-                      <h3 className={`font-heading text-xl transition-colors ${
-                        activeStep === index ? 'text-white' : 'text-[var(--color-tan-light)]'
-                      }`}>
+                      <h3 className={`font-heading text-sm transition-colors`}>
                         {step.title}
                       </h3>
                     </div>
@@ -170,16 +162,16 @@ const HowItWorksSection = () => {
               </div>
             </div>
             
-            {/* Step details */}
+            {/* Step details mobile */}
             <div className="lg:hidden grid gap-8 mx-auto max-w-4xl">
               {steps.map((step, index) => (
                 <div key={index} className={`order-1 lg:order-2 transition-all duration-700 ${sectionInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-                  <div className="bg-[var(--color-royal-navy)] p-8 h-full">
+                  <div className="bg-tan p-8 h-full">
                     <div
                       key={index}
                       className="flex flex-col items-center text-center h-full transition-opacity duration-300"
                     >
-                      <div className="w-14 h-14 mb-6 flex items-center justify-center bg-[var(--color-tan)] rounded-full">
+                      <div className="w-14 h-14 mb-6 flex items-center justify-center bg-soft-navy rounded-full">
                         <Image 
                           src={steps[index].icon} 
                           alt={steps[index].title} 
@@ -187,29 +179,31 @@ const HowItWorksSection = () => {
                           height={30}
                         />
                       </div>
-                      <h3 className="text-lg font-heading mb-4">{index+1}. {steps[index].title}</h3>
-                      <p className="text-[var(--color-off-white)] text-base">{steps[index].description}</p>
+                      <h3 className="text-sm font-heading mb-4">{index+1}. {steps[index].title}</h3>
+                      <p className="text-base">{steps[index].description}</p>
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-            <div className={`hidden lg:block order-1 lg:order-2 transition-all duration-700 ${sectionInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
-              <div className="bg-[var(--color-royal-navy)] p-8 h-full">
+
+            {/* Step details desktop */}
+            <div className={`w-full hidden lg:block order-1 lg:order-2 transition-all duration-700 ${sectionInView ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
+              <div className="bg-tan p-8 h-full">
                 <div
                   key={activeStep}
                   className="flex flex-col items-center text-center h-full transition-opacity duration-300"
                 >
-                  <div className="w-20 h-20 mb-6 flex items-center justify-center bg-[var(--color-tan)] rounded-full">
+                  <div className="w-16 h-16 mb-6 flex items-center justify-center bg-soft-navy rounded-full">
                     <Image 
                       src={steps[activeStep].icon} 
                       alt={steps[activeStep].title} 
-                      width={40} 
-                      height={40}
+                      width={30} 
+                      height={30}
                     />
                   </div>
-                  <h3 className="text-2xl font-heading mb-4">{steps[activeStep].title}</h3>
-                  <p className="text-[var(--color-off-white)] text-lg">{steps[activeStep].description}</p>
+                  <h3 className="text-base font-heading mb-4">{steps[activeStep].title}</h3>
+                  <p className="text-base">{steps[activeStep].description}</p>
                   
                   <div className="mt-auto pt-8 flex space-x-2">
                     {steps.map((_, index) => (
@@ -217,7 +211,7 @@ const HowItWorksSection = () => {
                         key={index}
                         onClick={() => setActiveStep(index)}
                         className={`w-2 h-2 rounded-full transition-all ${
-                          activeStep === index ? 'bg-[var(--color-tan)] w-6' : 'bg-[var(--color-soft-navy)]'
+                          activeStep === index ? 'bg-royal-navy w-6' : 'bg-soft-navy'
                         }`}
                         aria-label={`Go to step ${index + 1}`}
                       />
@@ -278,22 +272,18 @@ const ComparisonSection = () => {
         <div
           className={`transition-all duration-1000 ${sectionInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
-          <h2 
-            className="text-3xl md:text-5xl font-heading text-center mb-6 uppercase "
-          >
-            Why An Equity Solution Is The <span className="text-[var(--color-tan)]">Better Option</span>
+          <h2 className="text-lg font-heading text-center mb-6 uppercase">
+            Why An Equity Solution Is The Better Option
           </h2>
           
-          <p 
-            className="text-center max-w-3xl mx-auto mb-10 text-lg"
-          >
+          <p className="text-center max-w-3xl mx-auto mb-16 text-lg">
             Our approach helps you maintain dignity and control while addressing your tax obligations,
             unlike the devastating effects of liquidation.
           </p>
 
           <ComparisonTable></ComparisonTable>
 
-          <div className="grid place-items-center mt-10">
+          <div className="grid place-items-center mt-16">
             <Cta />
           </div>
         </div>
@@ -336,27 +326,19 @@ const TestimonialsSection = () => {
   return (
     <section 
       ref={sectionRef} 
-      className="py-24 md:py-32 px-4 bg-[var(--color-charcoal)]" 
+      className="py-24 md:py-32 px-4 bg-tan-light text-white" 
       id="testimonials"
     >
       <div className="max-w-5xl mx-auto">
         <div
           className={`transition-all duration-1000 ${sectionInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
-          <h2 
-            className="text-3xl md:text-5xl font-heading text-center mb-20 uppercase "
-          >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-tan)] to-[var(--color-tan-light)]">
-              What Our Clients Say
-            </span>
+          <h2 className="text-lg font-heading text-center mb-20 uppercase">
+            What Our Clients Say
           </h2>
           
           <div className="relative">
-            <div className="absolute -top-16 -left-16 w-32 h-32 text-9xl text-[var(--color-tan)] opacity-20 font-serif">
-              "
-            </div>
-            
-            <div className="relative overflow-hidden bg-[var(--color-royal-navy)]">
+            <div className="relative overflow-hidden bg-tan">
               <div className="flex flex-col md:flex-row h-full">
                 {/* Decorative element */}
                 <div className="w-full md:w-1/3 bg-gradient-to-br from-[var(--color-tan)] to-[var(--color-tan-light)] p-8 flex items-center justify-center">
@@ -366,17 +348,17 @@ const TestimonialsSection = () => {
                 </div>
                 
                 {/* Testimonial content */}
-                <div className="w-full md:w-2/3 p-8 md:p-12">
+                <div className="w-full md:w-2/3 p-8">
                   <div
                     key={currentIndex}
                     className="flex flex-col transition-opacity duration-300"
                   >
-                    <p className="italic text-lg md:text-xl mb-8">{testimonials[currentIndex].quote}</p>
+                    <p className="italic text-lg mb-8">{testimonials[currentIndex].quote}</p>
                     <div className="mt-auto">
-                      <p className="font-heading text-xl text-[var(--color-tan)]">
+                      <p className="font-heading text-base text-white">
                         {testimonials[currentIndex].author}
                       </p>
-                      <p className="text-[var(--color-tan-light)]">
+                      <p className="text-white">
                         {testimonials[currentIndex].role}
                       </p>
                     </div>
@@ -390,7 +372,7 @@ const TestimonialsSection = () => {
                           key={index}
                           onClick={() => setCurrentIndex(index)}
                           className={`w-2 h-2 rounded-full transition-all ${
-                            currentIndex === index ? 'bg-[var(--color-tan)] w-6' : 'bg-[var(--color-soft-navy)]'
+                            currentIndex === index ? 'bg-royal-navy w-6' : 'bg-[var(--color-soft-navy)]'
                           }`}
                           aria-label={`Go to testimonial ${index + 1}`}
                         />
@@ -400,14 +382,14 @@ const TestimonialsSection = () => {
                     <div className="flex space-x-3">
                       <button
                         onClick={prevTestimonial}
-                        className="w-10 h-10 rounded-full bg-[var(--color-soft-navy)] flex items-center justify-center text-white hover:bg-[var(--color-tan)] transition-colors hover:scale-110 active:scale-95"
+                        className="w-10 h-10 rounded-full bg-soft-navy flex items-center justify-center text-white hover:bg-[var(--color-tan)] transition-colors hover:scale-110 active:scale-95"
                         aria-label="Previous testimonial"
                       >
                         ←
                       </button>
                       <button
                         onClick={nextTestimonial}
-                        className="w-10 h-10 rounded-full bg-[var(--color-soft-navy)] flex items-center justify-center text-white hover:bg-[var(--color-tan)] transition-colors hover:scale-110 active:scale-95"
+                        className="w-10 h-10 rounded-full bg-soft-navy flex items-center justify-center text-white hover:bg-[var(--color-tan)] transition-colors hover:scale-110 active:scale-95"
                         aria-label="Next testimonial"
                       >
                         →
@@ -470,7 +452,7 @@ const FAQSection = () => {
           className={`transition-all duration-1000 ${sectionInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           <h2 
-            className="text-3xl md:text-5xl font-heading text-center mb-20 uppercase "
+            className="text-lg font-heading text-center mb-20 uppercase "
           >
             Frequently Asked <span className="text-[var(--color-tan)]">Questions</span>
           </h2>
@@ -480,12 +462,12 @@ const FAQSection = () => {
               <div 
                 key={index}
                 className={`overflow-hidden transition-all duration-500 ${
-                  openIndex === index ? 'bg-[var(--color-royal-navy)]' : 'bg-[#2a2a38]'
+                  openIndex === index ? 'bg-charcoal' : 'bg-soft-navy'
                 } ${sectionInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <button
-                  className="w-full text-left p-6 flex justify-between items-center font-heading text-lg"
+                  className="cursor-pointer w-full text-left p-6 flex justify-between items-center font-heading text-sm"
                   onClick={() => toggleFAQ(index)}
                   aria-expanded={openIndex === index}
                   aria-controls={`faq-answer-${index}`}
@@ -579,7 +561,7 @@ const ContactForm = () => {
           className={`transition-all duration-1000 ${sectionInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
         >
           <h2 
-            className="text-3xl md:text-5xl font-heading text-center mb-6 uppercase "
+            className="text-2xl md:text-5xl font-heading text-center mb-6 uppercase "
           >
             Take The First Step <span className="text-[var(--color-tan)]">Towards A Solution</span>
           </h2>
@@ -728,76 +710,6 @@ const ContactForm = () => {
 };
 
 // Modern footer with animation
-const Footer = () => {
-  return (
-    <footer className="py-12 px-4 bg-[var(--color-royal-navy)] border-t border-[var(--color-soft-navy)]">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div 
-            className="mb-8 md:mb-0 transition-all duration-700 opacity-0 animate-fadeIn"
-            style={{ animationDelay: '200ms', animationFillMode: 'forwards' }}
-          >
-            <Image
-              src="/frontfinancial-logo-script-tan.svg"
-              alt="Front Financial"
-              width={160}
-              height={50}
-              className="h-10 w-auto"
-            />
-          </div>
-          
-          <div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16 transition-all duration-700 opacity-0 animate-fadeIn"
-            style={{ animationDelay: '300ms', animationFillMode: 'forwards' }}
-          >
-            <div>
-              <h4 className="font-heading text-[var(--color-tan)] mb-4">Contact</h4>
-              <ul className="space-y-2 text-[var(--color-tan-light)]">
-                <li>info@frontfinancial.com</li>
-                <li>1300 123 456</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-heading text-[var(--color-tan)] mb-4">Links</h4>
-              <ul className="space-y-2">
-                <li><a href="#" className="text-[var(--color-tan-light)] hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="text-[var(--color-tan-light)] hover:text-white transition-colors">Terms of Service</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-heading text-[var(--color-tan)] mb-4">Follow Us</h4>
-              <div className="flex space-x-4">
-                <a href="#" className="text-[var(--color-tan-light)] hover:text-white transition-colors">
-                  <span className="sr-only">LinkedIn</span>
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                  </svg>
-                </a>
-                <a href="#" className="text-[var(--color-tan-light)] hover:text-white transition-colors">
-                  <span className="sr-only">Twitter</span>
-                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723 10.1 10.1 0 01-3.127 1.184 4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div 
-          className="mt-12 pt-8 border-t border-[var(--color-soft-navy)] text-center transition-all duration-700 opacity-0 animate-fadeIn"
-          style={{ animationDelay: '400ms', animationFillMode: 'forwards' }}
-        >
-          <p className="text-sm text-[var(--color-tan-light)]">
-            &copy; {new Date().getFullYear()} Front Financial. All rights reserved. 
-            Confidential and professional tax resolution services.
-          </p>
-        </div>
-      </div>
-    </footer>
-  );
-};
-
 export default function LandingPage() {
   return (
     <>
@@ -827,7 +739,6 @@ export default function LandingPage() {
       <ComparisonSection />
       <TestimonialsSection />
       <FAQSection />
-      <Footer />
     </>
   );
 }

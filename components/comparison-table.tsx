@@ -19,27 +19,27 @@ export default function ComparisonTable() {
       {/* Desktop / tablet layout */}
       <div className="hidden md:grid grid-cols-[auto_1fr_1fr] gap-10 justify-center">
         {/* Feature labels */}
-        <ul className="self-stretch grid grid-rows-5 content-between text-left text-base lg:text-lg text-[var(--color-tan)] py-8">
-          <div className="w-full h-[56px]"></div>
+        <ul className="self-stretch grid grid-rows-5 content-between text-left text-base text-white py-6">
+          <div className="w-full h-[40px]"></div>
           {FEATURES.map((label, i) => (
-            <li key={i} className="flex items-center justify-items-end justify-end min-h-[60px] leading-snug text-right">
+            <li key={i} className="flex items-center justify-items-end justify-end h-[60px] leading-snug text-right">
               {label}
             </li>
           ))}
         </ul>
 
         {/* Liquidation column */}
-        <div className="rounded-[36px] px-8 py-8 lg:px-10 lg:py-10 bg-tan">
-          <h3 className="text-center text-white uppercase tracking-widest text-lg lg:text-xl h-[56px] grid place-items-center">Liquidation</h3>
+        <div className="rounded-[20px] px-8 py-6 bg-tan">
+          <h3 className="text-center text-white uppercase tracking-widest text-sm h-[40px] grid place-items-center">Liquidation</h3>
           <div className="mt-6 grid grid-rows-5 gap-6 place-items-center">
             {FEATURES.map((_, i) => (
               <div key={i} className="flex items-center justify-center h-[60px]">
                 <Image
                   src="/icon-cross.svg"
                   alt="Not included"
-                  width={64}
-                  height={64}
-                  className="w-10 h-10 md:w-12 md:h-12"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10"
                 />
               </div>
             ))}
@@ -47,8 +47,8 @@ export default function ComparisonTable() {
         </div>
 
         {/* Equity Solution column */}
-        <div className="rounded-[36px] px-8 py-8 lg:px-10 lg:py-10 bg-soft-navy">
-          <h3 className="text-center text-white uppercase tracking-widest text-lg lg:text-xl">
+        <div className="rounded-[20px] px-8 py-6 bg-soft-navy">
+          <h3 className="text-center text-white uppercase tracking-widest text-sm">
             <span className="block">Equity</span>
             <span className="block">Solution</span>
           </h3>
@@ -58,9 +58,9 @@ export default function ComparisonTable() {
                 <Image
                   src="/icon-check.svg"
                   alt="Included"
-                  width={64}
-                  height={64}
-                  className="w-9 h-9 md:w-11 md:h-11"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10"
                 />
               </div>
             ))}
