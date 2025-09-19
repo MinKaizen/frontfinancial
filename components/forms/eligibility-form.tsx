@@ -4,30 +4,32 @@ import { metaPixel } from '@/utils/metaPixel';
 import { useState } from 'react';
 
 export default function EligibilityForm() {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [firstname, setFirstName] = useState('');
+  const [lastname, setLastName] = useState('');
   const [phone, setPhone] = useState('');
-  const [ownProperty, setOwnProperty] = useState('');
+  const [owns_property, setOwnProperty] = useState('');
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'ok' | 'err'>('idle');
-  const [errors, setErrors] = useState<{ ownProperty?: string }>({});
+  const [errors, setErrors] = useState<{ owns_property?: string }>({});
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     // Validate required custom field before submit
-    if (!ownProperty) {
-      setErrors({ ownProperty: 'Please select whether you currently own a property.' });
+    if (!owns_property) {
+      setErrors({ owns_property: 'Please select whether you currently own a property.' });
       return;
     }
     if (!email) return;
     setStatus('loading');
 
-    const res = await fetch('/api/email-form', {
+    const res = await fetch('/api/eligibility-form', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, firstName, lastName, phone, ownProperty }),
+      body: JSON.stringify({ email, firstname, lastname, phone, owns_property }),
     });
-    console.log(res)
+
+    const json = await res.json()
+    console.log({res, json})
 
     if (res.ok) {
       setStatus('ok');
@@ -50,17 +52,17 @@ export default function EligibilityForm() {
       <div className="grid grid-cols-1 gap-x-6 gap-y-4 md:grid-cols-2">
         <div className="relative border-b pt-3 pb-1">
           <input
-            id="firstName"
+            id="firstname"
             type="text"
             required
             placeholder=" "
-            value={firstName}
+            value={firstname}
             onChange={(e) => setFirstName(e.target.value)}
             className="peer w-full bg-transparent outline-none"
             autoComplete="given-name"
           />
           <label
-            htmlFor="firstName"
+            htmlFor="firstname"
             className="pointer-events-none absolute left-0 top-0 translate-y-0 text-xs opacity-100 italic transition-all duration-150 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:opacity-70 peer-focus:top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:opacity-100"
           >
             First Name
@@ -69,17 +71,17 @@ export default function EligibilityForm() {
 
         <div className="relative border-b pt-3 pb-1">
           <input
-            id="lastName"
+            id="lastname"
             type="text"
             required
             placeholder=" "
-            value={lastName}
+            value={lastname}
             onChange={(e) => setLastName(e.target.value)}
             className="peer w-full bg-transparent outline-none"
             autoComplete="family-name"
           />
           <label
-            htmlFor="lastName"
+            htmlFor="lastname"
             className="pointer-events-none absolute left-0 top-0 translate-y-0 text-xs opacity-100 italic transition-all duration-150 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:opacity-70 peer-focus:top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:opacity-100"
           >
             Last Name
@@ -127,7 +129,7 @@ export default function EligibilityForm() {
 
         <div className="pt-3 pb-1 col-span-full">
           <span
-            id="ownProperty-label"
+            id="owns_property-label"
             className="text-base italic opacity-100"
           >
             Do you currently own a property?
@@ -137,53 +139,53 @@ export default function EligibilityForm() {
 
             <div
               role="radiogroup"
-              aria-labelledby="ownProperty-label"
-              aria-invalid={!!errors.ownProperty}
-              aria-describedby={errors.ownProperty ? 'ownProperty-error' : undefined}
+              aria-labelledby="owns_property-label"
+              aria-invalid={!!errors.owns_property}
+              aria-describedby={errors.owns_property ? 'owns_property-error' : undefined}
               className="inline-flex rounded-full overflow-hidden border"
             >
               <button
                 type="button"
                 role="radio"
-                aria-checked={ownProperty === 'no'}
-                tabIndex={ownProperty === '' || ownProperty === 'no' ? 0 : -1}
+                aria-checked={owns_property === 'false'}
+                tabIndex={owns_property === '' || owns_property === 'no' ? 0 : -1}
                 onClick={() => {
-                  setOwnProperty('no');
-                  if (errors.ownProperty) setErrors({});
+                  setOwnProperty('false');
+                  if (errors.owns_property) setErrors({});
                 }}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
-                    setOwnProperty('no');
-                    if (errors.ownProperty) setErrors({});
+                    setOwnProperty('false');
+                    if (errors.owns_property) setErrors({});
                   }
                 }}
-                className={`px-4 py-1 text-sm italic transition-colors ${ownProperty === 'no' ? 'bg-soft-navy' : 'hover:bg-royal-navy'}`}
+                className={`px-4 py-1 text-sm italic transition-colors ${owns_property === 'false' ? 'bg-soft-navy' : 'hover:bg-royal-navy'}`}
               >
                 No
               </button>
               <button
                 type="button"
                 role="radio"
-                aria-checked={ownProperty === 'yes'}
-                tabIndex={ownProperty === 'yes' ? 0 : -1}
+                aria-checked={owns_property === 'true'}
+                tabIndex={owns_property === 'true' ? 0 : -1}
                 onClick={() => {
-                  setOwnProperty('yes');
-                  if (errors.ownProperty) setErrors({});
+                  setOwnProperty('true');
+                  if (errors.owns_property) setErrors({});
                 }}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
-                    setOwnProperty('yes');
-                    if (errors.ownProperty) setErrors({});
+                    setOwnProperty('true');
+                    if (errors.owns_property) setErrors({});
                   }
                 }}
-                className={`px-4 py-1 text-sm italic transition-colors ${ownProperty === 'yes' ? 'bg-soft-navy' : 'hover:bg-royal-navy'}`}
+                className={`px-4 py-1 text-sm italic transition-colors ${owns_property === 'true' ? 'bg-soft-navy' : 'hover:bg-royal-navy'}`}
               >
                 Yes
               </button>
             </div>
-            {errors.ownProperty && (
-              <p id="ownProperty-error" className="text-sm italic text-red-600">
-                {errors.ownProperty}
+            {errors.owns_property && (
+              <p id="owns_property-error" className="text-sm italic text-red-600">
+                {errors.owns_property}
               </p>
             )}
           </div>
@@ -200,7 +202,7 @@ export default function EligibilityForm() {
         </button>
       </div>
 
-      {errors.ownProperty && (
+      {errors.owns_property && (
         <p className="mt-2 text-sm italic text-red-600" role="alert">
           Please select whether you currently own a property.
         </p>
