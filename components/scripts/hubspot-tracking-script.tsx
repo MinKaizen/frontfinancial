@@ -5,7 +5,7 @@ export function HubspotTrackingScript () {
     <Script
       id="hs-script-loader"
       strategy="afterInteractive"
-      src={`//js.hs-scripts.com/${process.env.HUBSPOT_PORTAL_ID}.js`}
+      src={`//js-ap1.hs-scripts.com/${process.env.HUBSPOT_PORTAL_ID}.js`}
     />
   );
 }
