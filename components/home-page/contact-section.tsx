@@ -1,4 +1,4 @@
-import EmailForm from "@/components/forms/email-form";
+import EligibilityForm from "@/components/forms/eligibility-form";
 
 export function ContactSection() {
   return (
@@ -15,7 +15,7 @@ export function ContactSection() {
               We keep it simple: clear conversations, decisive action, lasting impact.
               Across residential, commercial, private, and business finance, we deliver tailored solutions that move you forward. With deep market expertise, trusted networks, and a sharp strategic lens, we cut through the complexity so you can focus on what matters most: results.
             </p>
-            <EmailForm />
+            <EligibilityForm />
           </div>
           <div className="self-start w-full md:w-[1000px] md:max-w-[500px] mb-15 aspect-[3/2] lg:aspect-[10/11] relative overflow-hidden">
             <video className="absolute inset-0 w-full h-full object-cover filter grayscale" src="/metropolis.mp4" autoPlay loop muted playsInline />
