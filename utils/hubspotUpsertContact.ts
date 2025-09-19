@@ -1,0 +1,70 @@
+import { Client } from "@hubspot/api-client";
+import { SimplePublicObject } from "@hubspot/api-client/lib/codegen/crm/contacts";
+import { hubspotFindContactByEmail, HubSpotContact as SearchHubSpotContact } from "./hubspotFindContactByEmail";
+
+export type UpsertContactInput = {
+  email: string;
+  firstname?: string;
+  lastname?: string;
+  owns_property?: "true" | "false" | boolean;
+  phone?: string;
+};
+
+type UpsertedHubSpotContact = SearchHubSpotContact & {
+  properties: SearchHubSpotContact["properties"] & { phone?: string };
+};
+
+const mapSimpleToContact = (o: SimplePublicObject): UpsertedHubSpotContact => ({
+  id: o.id,
+  properties: {
+    email: o.properties?.email ?? "",
+    firstname: o.properties?.firstname ?? "",
+    hs_object_id: o.properties?.hs_object_id ?? o.id,
+    lastname: o.properties?.lastname ?? "",
+    owns_property: o.properties?.owns_property === "true" ? "true" : "false",
+    ...(o.properties?.phone ? { phone: o.properties.phone } : {}),
+  },
+});
+
+export async function hubspotUpsertContact(input: UpsertContactInput): Promise<UpsertedHubSpotContact> {
+  const token = process.env.HUBSPOT_ACCESS_TOKEN;
+  if (!token) throw new Error("HUBSPOT_ACESS_TOKEN is not set");
+  if (!input?.email || !input.email.includes("@")) throw new Error("A valid email is required");
+
+  const hubspotClient = new Client({ accessToken: token });
+
+  const existing = await hubspotFindContactByEmail(input.email);
+
+  const properties: Record<string, string> = {};
+  if (typeof input.firstname !== "undefined") properties.firstname = input.firstname;
+  if (typeof input.lastname !== "undefined") properties.lastname = input.lastname;
+  if (typeof input.phone !== "undefined") properties.phone = input.phone;
+  if (typeof input.owns_property !== "undefined") {
+    properties.owns_property = typeof input.owns_property === "boolean" ? (input.owns_property ? "true" : "false") : input.owns_property;
+  }
+
+  try {
+    if (existing) {
+      if (Object.keys(properties).length === 0) {
+        const result = await hubspotClient.crm.contacts.basicApi.getById(existing.id, [
+          "email",
+          "firstname",
+          "lastname",
+          "hs_object_id",
+          "owns_property",
+          "phone",
+        ]);
+        return mapSimpleToContact(result);
+      }
+      const updated = await hubspotClient.crm.contacts.basicApi.update(existing.id, { properties });
+      return mapSimpleToContact(updated);
+    } else {
+      const created = await hubspotClient.crm.contacts.basicApi.create({ properties: { email: input.email, ...properties } });
+      return mapSimpleToContact(created);
+    }
+  } catch (e: any) {
+    const details = e?.response?.body ? (typeof e.response.body === "string" ? e.response.body : e.response.body?.message || JSON.stringify(e.response.body)) : undefined;
+    const message = e instanceof Error ? e.message : String(e);
+    throw new Error(`HubSpot contact upsert failed: ${details || message}`);
+  }
+}
