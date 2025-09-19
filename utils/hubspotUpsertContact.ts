@@ -28,7 +28,7 @@ const mapSimpleToContact = (o: SimplePublicObject): UpsertedHubSpotContact => ({
 
 export async function hubspotUpsertContact(input: UpsertContactInput): Promise<UpsertedHubSpotContact> {
   const token = process.env.HUBSPOT_ACCESS_TOKEN;
-  if (!token) throw new Error("HUBSPOT_ACESS_TOKEN is not set");
+  if (!token) throw new Error("HUBSPOT_ACCESS_TOKEN is not set");
   if (!input?.email || !input.email.includes("@")) throw new Error("A valid email is required");
 
   const hubspotClient = new Client({ accessToken: token });
