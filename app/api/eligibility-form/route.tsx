@@ -27,6 +27,7 @@ const contactSchema = z.object({
   owns_property: z
     .enum(["true", "false"], "Please select whether you currently own a property."),
   email: z.string().trim().email("Valid email required"),
+  contact_source: z.string().optional(),
 });
 
 export async function POST(req: NextRequest) {

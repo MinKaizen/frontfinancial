@@ -1,7 +1,7 @@
 'use client';
 
 import { metaPixel } from '@/utils/metaPixel';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function EligibilityForm() {
   const [firstname, setFirstName] = useState('');
@@ -11,6 +11,11 @@ export default function EligibilityForm() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'ok' | 'err'>('idle');
   const [errors, setErrors] = useState<{ owns_property?: string }>({});
+  const [contact_source, setContactSource] = useState<string | null>(null);
+
+  useEffect(() => {
+    setContactSource(window.location.href);
+  }, []);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -25,7 +30,14 @@ export default function EligibilityForm() {
     const res = await fetch('/api/eligibility-form', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, firstname, lastname, phone, owns_property }),
+      body: JSON.stringify({
+        email,
+        firstname,
+        lastname,
+        phone,
+        owns_property,
+        contact_source,
+      }),
     });
 
     const json = await res.json()
@@ -49,172 +61,177 @@ export default function EligibilityForm() {
 
   return (
     <form onSubmit={onSubmit} className="w-full max-w-sm lg:max-w-3xl">
-      <div className="grid grid-cols-1 gap-x-6 gap-y-4 md:grid-cols-2">
-        <div className="relative border-b pt-3 pb-1">
-          <input
-            id="firstname"
-            type="text"
-            required
-            placeholder=" "
-            value={firstname}
-            onChange={(e) => setFirstName(e.target.value)}
-            className="peer w-full bg-transparent outline-none"
-            autoComplete="given-name"
-          />
-          <label
-            htmlFor="firstname"
-            className="pointer-events-none absolute left-0 top-0 translate-y-0 text-xs opacity-100 italic transition-all duration-150 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:opacity-70 peer-focus:top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:opacity-100"
-          >
-            First Name
-          </label>
-        </div>
-
-        <div className="relative border-b pt-3 pb-1">
-          <input
-            id="lastname"
-            type="text"
-            required
-            placeholder=" "
-            value={lastname}
-            onChange={(e) => setLastName(e.target.value)}
-            className="peer w-full bg-transparent outline-none"
-            autoComplete="family-name"
-          />
-          <label
-            htmlFor="lastname"
-            className="pointer-events-none absolute left-0 top-0 translate-y-0 text-xs opacity-100 italic transition-all duration-150 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:opacity-70 peer-focus:top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:opacity-100"
-          >
-            Last Name
-          </label>
-        </div>
-
-        <div className="relative border-b pt-3 pb-1 md:col-span-2">
-          <input
-            id="email"
-            type="email"
-            required
-            placeholder=" "
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="peer w-full bg-transparent outline-none"
-            autoComplete="email"
-          />
-          <label
-            htmlFor="email"
-            className="pointer-events-none absolute left-0 top-0 translate-y-0 text-xs opacity-100 italic transition-all duration-150 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:opacity-70 peer-focus:top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:opacity-100"
-          >
-            Your Email Address
-          </label>
-        </div>
-
-        <div className="relative border-b pt-3 pb-1 md:col-span-2">
-          <input
-            id="phone"
-            type="tel"
-            required
-            placeholder=" "
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            className="peer w-full bg-transparent outline-none"
-            autoComplete="tel"
-            inputMode="tel"
-          />
-          <label
-            htmlFor="phone"
-            className="pointer-events-none absolute left-0 top-0 translate-y-0 text-xs opacity-100 italic transition-all duration-150 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:opacity-70 peer-focus:top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:opacity-100"
-          >
-            Phone Number
-          </label>
-        </div>
-
-        <div className="pt-3 pb-1 col-span-full">
-          <span
-            id="owns_property-label"
-            className="text-base italic opacity-100"
-          >
-            Do you currently own a property?
-          </span>
-
-          <div className="flex flex-row content-center items-center gap-4 mt-2">
-
-            <div
-              role="radiogroup"
-              aria-labelledby="owns_property-label"
-              aria-invalid={!!errors.owns_property}
-              aria-describedby={errors.owns_property ? 'owns_property-error' : undefined}
-              className="inline-flex rounded-full overflow-hidden border"
-            >
-              <button
-                type="button"
-                role="radio"
-                aria-checked={owns_property === 'false'}
-                tabIndex={owns_property === '' || owns_property === 'no' ? 0 : -1}
-                onClick={() => {
-                  setOwnProperty('false');
-                  if (errors.owns_property) setErrors({});
-                }}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    setOwnProperty('false');
-                    if (errors.owns_property) setErrors({});
-                  }
-                }}
-                className={`px-4 py-1 text-sm italic transition-colors ${owns_property === 'false' ? 'bg-soft-navy' : 'hover:bg-royal-navy'}`}
+      {status !== 'ok' && (
+        <>
+          <div className="grid grid-cols-1 gap-x-6 gap-y-4 md:grid-cols-2">
+            <div className="relative border-b pt-3 pb-1">
+              <input
+                id="firstname"
+                type="text"
+                required
+                placeholder=" "
+                value={firstname}
+                onChange={(e) => setFirstName(e.target.value)}
+                className="peer w-full bg-transparent outline-none"
+                autoComplete="given-name"
+              />
+              <label
+                htmlFor="firstname"
+                className="pointer-events-none absolute left-0 top-0 translate-y-0 text-xs opacity-100 italic transition-all duration-150 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:opacity-70 peer-focus:top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:opacity-100"
               >
-                No
-              </button>
-              <button
-                type="button"
-                role="radio"
-                aria-checked={owns_property === 'true'}
-                tabIndex={owns_property === 'true' ? 0 : -1}
-                onClick={() => {
-                  setOwnProperty('true');
-                  if (errors.owns_property) setErrors({});
-                }}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    setOwnProperty('true');
-                    if (errors.owns_property) setErrors({});
-                  }
-                }}
-                className={`px-4 py-1 text-sm italic transition-colors ${owns_property === 'true' ? 'bg-soft-navy' : 'hover:bg-royal-navy'}`}
-              >
-                Yes
-              </button>
+                First Name
+              </label>
             </div>
-            {errors.owns_property && (
-              <p id="owns_property-error" className="text-sm italic text-red-600">
-                {errors.owns_property}
-              </p>
-            )}
-          </div>
-        </div>
-      </div>
 
-      <div className="flex pt-4">
-        <button
-          type="submit"
-          disabled={status === 'loading'}
-          className="px-4 py-2 bg-soft-navy capitalize tracking-wide cursor-pointer italic disabled:opacity-60"
-        >
-          {status === 'loading' ? 'Sending…' : 'Submit'}
-        </button>
-      </div>
+            <div className="relative border-b pt-3 pb-1">
+              <input
+                id="lastname"
+                type="text"
+                required
+                placeholder=" "
+                value={lastname}
+                onChange={(e) => setLastName(e.target.value)}
+                className="peer w-full bg-transparent outline-none"
+                autoComplete="family-name"
+              />
+              <label
+                htmlFor="lastname"
+                className="pointer-events-none absolute left-0 top-0 translate-y-0 text-xs opacity-100 italic transition-all duration-150 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:opacity-70 peer-focus:top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:opacity-100"
+              >
+                Last Name
+              </label>
+            </div>
+
+            <div className="relative border-b pt-3 pb-1 md:col-span-2">
+              <input
+                id="email"
+                type="email"
+                required
+                placeholder=" "
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="peer w-full bg-transparent outline-none"
+                autoComplete="email"
+              />
+              <label
+                htmlFor="email"
+                className="pointer-events-none absolute left-0 top-0 translate-y-0 text-xs opacity-100 italic transition-all duration-150 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:opacity-70 peer-focus:top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:opacity-100"
+              >
+                Your Email Address
+              </label>
+            </div>
+
+            <div className="relative border-b pt-3 pb-1 md:col-span-2">
+              <input
+                id="phone"
+                type="tel"
+                required
+                placeholder=" "
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                className="peer w-full bg-transparent outline-none"
+                autoComplete="tel"
+                inputMode="tel"
+              />
+              <label
+                htmlFor="phone"
+                className="pointer-events-none absolute left-0 top-0 translate-y-0 text-xs opacity-100 italic transition-all duration-150 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:opacity-70 peer-focus:top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:opacity-100"
+              >
+                Phone Number
+              </label>
+            </div>
+
+            <div className="pt-3 pb-1 col-span-full">
+              <span
+                id="owns_property-label"
+                className="text-base italic opacity-100"
+              >
+                Do you currently own a property?
+              </span>
+
+              <div className="flex flex-row content-center items-center gap-4 mt-2">
+
+                <div
+                  role="radiogroup"
+                  aria-labelledby="owns_property-label"
+                  aria-invalid={!!errors.owns_property}
+                  aria-describedby={errors.owns_property ? 'owns_property-error' : undefined}
+                  className="inline-flex rounded-full overflow-hidden border"
+                >
+                  <button
+                    type="button"
+                    role="radio"
+                    aria-checked={owns_property === 'false'}
+                    tabIndex={owns_property === '' || owns_property === 'no' ? 0 : -1}
+                    onClick={() => {
+                      setOwnProperty('false');
+                      if (errors.owns_property) setErrors({});
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        setOwnProperty('false');
+                        if (errors.owns_property) setErrors({});
+                      }
+                    }}
+                    className={`px-4 py-1 text-sm italic transition-colors ${owns_property === 'false' ? 'bg-soft-navy' : 'hover:bg-royal-navy'}`}
+                  >
+                    No
+                  </button>
+                  <button
+                    type="button"
+                    role="radio"
+                    aria-checked={owns_property === 'true'}
+                    tabIndex={owns_property === 'true' ? 0 : -1}
+                    onClick={() => {
+                      setOwnProperty('true');
+                      if (errors.owns_property) setErrors({});
+                    }}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        setOwnProperty('true');
+                        if (errors.owns_property) setErrors({});
+                      }
+                    }}
+                    className={`px-4 py-1 text-sm italic transition-colors ${owns_property === 'true' ? 'bg-soft-navy' : 'hover:bg-royal-navy'}`}
+                  >
+                    Yes
+                  </button>
+                </div>
+                {errors.owns_property && (
+                  <p id="owns_property-error" className="text-sm italic text-red-600">
+                    {errors.owns_property}
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
+
+          <div className="flex pt-4">
+            <button
+              type="submit"
+              disabled={status === 'loading'}
+              className="px-4 py-2 bg-soft-navy capitalize tracking-wide cursor-pointer italic disabled:opacity-60"
+            >
+              {status === 'loading' ? 'Sending…' : 'Submit'}
+            </button>
+          </div>
+        </>
+      )}
 
       {errors.owns_property && (
-        <p className="mt-2 text-sm italic text-red-600" role="alert">
+        <p className="mt-4 text-base italic text-red-500 bg-red-100 px-4 py-2 max-w-max border-l-4 border-red-500" role="alert">
           Please select whether you currently own a property.
         </p>
       )}
 
       {status === 'ok' && (
-        <p className="mt-2 text-sm italic text-green-400" role="status">
+        <p className="mt-4 text-base italic text-emerald-500 bg-emerald-100 px-4 py-2 max-w-max border-l-4 border-emerald-500" role="status">
           Thank you. We’ll be in touch shortly.
         </p>
       )}
+
       {status === 'err' && (
-        <p className="mt-2 text-base italic text-red-400" role="alert">
+        <p className="mt-4 text-base italic text-red-500 bg-red-100 px-4 py-2 max-w-max border-l-4 border-red-500" role="alert">
           Sorry, something went wrong. Please try again.
         </p>
       )}

@@ -8,6 +8,7 @@ export type UpsertContactInput = {
   lastname?: string;
   owns_property?: "true" | "false" | boolean;
   phone?: string;
+  contact_source?: string;
 };
 
 type UpsertedHubSpotContact = SearchHubSpotContact & {
@@ -22,6 +23,7 @@ const mapSimpleToContact = (o: SimplePublicObject): UpsertedHubSpotContact => ({
     hs_object_id: o.properties?.hs_object_id ?? o.id,
     lastname: o.properties?.lastname ?? "",
     owns_property: o.properties?.owns_property === "true" ? "true" : "false",
+    contact_source: o.properties?.contact_source ?? "",
     ...(o.properties?.phone ? { phone: o.properties.phone } : {}),
   },
 });
@@ -42,6 +44,7 @@ export async function hubspotUpsertContact(input: UpsertContactInput): Promise<U
   if (typeof input.owns_property !== "undefined") {
     properties.owns_property = typeof input.owns_property === "boolean" ? (input.owns_property ? "true" : "false") : input.owns_property;
   }
+  if (typeof input.contact_source !== "undefined") properties.contact_source = input.contact_source;
 
   try {
     if (existing) {
@@ -53,6 +56,7 @@ export async function hubspotUpsertContact(input: UpsertContactInput): Promise<U
           "hs_object_id",
           "owns_property",
           "phone",
+          "contact_source",
         ]);
         return mapSimpleToContact(result);
       }
