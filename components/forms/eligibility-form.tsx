@@ -2,46 +2,63 @@
 
 import { metaPixel } from '@/utils/metaPixel';
 import { useState, useEffect } from 'react';
+import { contactSchema } from '@/app/api/eligibility-form/route';
 
 export default function EligibilityForm() {
   const [firstname, setFirstName] = useState('');
   const [lastname, setLastName] = useState('');
   const [phone, setPhone] = useState('');
-  const [owns_property, setOwnProperty] = useState('');
+  const [owns_property_string, setOwnProperty] = useState('');
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'ok' | 'err'>('idle');
-  const [errors, setErrors] = useState<{ owns_property?: string }>({});
-  const [contact_source, setContactSource] = useState<string | null>(null);
+  const [errors, setErrors] = useState<{ owns_property_string?: string }>({});
+  const [contact_source, setContactSource] = useState<string>('');
+  const [pageUrl, setPageUrl] = useState<string>('');
+  const [pageName, setPageName] = useState<string>('');
+  const [hutk, setHutk] = useState<string | null>(null);
 
   useEffect(() => {
-    setContactSource(window.location.href);
+    setPageUrl(window.location.href ?? '');
+    setContactSource(pageUrl)
+    setPageName(window.location.pathname)
+
+    const hutkMatch = document.cookie.match(/hubspotutk=([^;]+)/);
+    if (hutkMatch) setHutk(hutkMatch[1]);
   }, []);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     // Validate required custom field before submit
-    if (!owns_property) {
-      setErrors({ owns_property: 'Please select whether you currently own a property.' });
+    if (!owns_property_string) {
+      setErrors({ owns_property_string: 'Please select whether you currently own a property.' });
       return;
     }
     if (!email) return;
     setStatus('loading');
 
-    const res = await fetch('/api/eligibility-form', {
+    const payload = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        email,
-        firstname,
-        lastname,
-        phone,
-        owns_property,
-        contact_source,
-      }),
-    });
-
+        fields: {
+          email,
+          firstname,
+          lastname,
+          phone,
+          owns_property_string,
+          contact_source,
+        },
+        meta: {
+          pageUrl,
+          pageName,
+          ...(hutk ? {hutk} : {}),
+        },
+      })
+    }
+    console.log({payload})
+    const res = await fetch('/api/eligibility-form', payload);
     const json = await res.json()
-    console.log({res, json})
+    console.log({responseJson: json})
 
     if (res.ok) {
       setStatus('ok');
@@ -143,7 +160,7 @@ export default function EligibilityForm() {
 
             <div className="pt-3 pb-1 col-span-full">
               <span
-                id="owns_property-label"
+                id="owns_property_string-label"
                 className="text-base italic opacity-100"
               >
                 Do you currently own a property?
@@ -153,53 +170,53 @@ export default function EligibilityForm() {
 
                 <div
                   role="radiogroup"
-                  aria-labelledby="owns_property-label"
-                  aria-invalid={!!errors.owns_property}
-                  aria-describedby={errors.owns_property ? 'owns_property-error' : undefined}
+                  aria-labelledby="owns_property_string-label"
+                  aria-invalid={!!errors.owns_property_string}
+                  aria-describedby={errors.owns_property_string ? 'owns_property_string-error' : undefined}
                   className="inline-flex rounded-full overflow-hidden border"
                 >
                   <button
                     type="button"
                     role="radio"
-                    aria-checked={owns_property === 'false'}
-                    tabIndex={owns_property === '' || owns_property === 'no' ? 0 : -1}
+                    aria-checked={owns_property_string === 'false'}
+                    tabIndex={owns_property_string === '' || owns_property_string === 'no' ? 0 : -1}
                     onClick={() => {
                       setOwnProperty('false');
-                      if (errors.owns_property) setErrors({});
+                      if (errors.owns_property_string) setErrors({});
                     }}
                     onKeyDown={(e) => {
                       if (e.key === 'Enter' || e.key === ' ') {
                         setOwnProperty('false');
-                        if (errors.owns_property) setErrors({});
+                        if (errors.owns_property_string) setErrors({});
                       }
                     }}
-                    className={`px-4 py-1 text-sm italic transition-colors ${owns_property === 'false' ? 'bg-soft-navy' : 'hover:bg-royal-navy'}`}
+                    className={`px-4 py-1 text-sm italic transition-colors ${owns_property_string === 'false' ? 'bg-soft-navy' : 'hover:bg-royal-navy'}`}
                   >
                     No
                   </button>
                   <button
                     type="button"
                     role="radio"
-                    aria-checked={owns_property === 'true'}
-                    tabIndex={owns_property === 'true' ? 0 : -1}
+                    aria-checked={owns_property_string === 'true'}
+                    tabIndex={owns_property_string === 'true' ? 0 : -1}
                     onClick={() => {
                       setOwnProperty('true');
-                      if (errors.owns_property) setErrors({});
+                      if (errors.owns_property_string) setErrors({});
                     }}
                     onKeyDown={(e) => {
                       if (e.key === 'Enter' || e.key === ' ') {
                         setOwnProperty('true');
-                        if (errors.owns_property) setErrors({});
+                        if (errors.owns_property_string) setErrors({});
                       }
                     }}
-                    className={`px-4 py-1 text-sm italic transition-colors ${owns_property === 'true' ? 'bg-soft-navy' : 'hover:bg-royal-navy'}`}
+                    className={`px-4 py-1 text-sm italic transition-colors ${owns_property_string === 'true' ? 'bg-soft-navy' : 'hover:bg-royal-navy'}`}
                   >
                     Yes
                   </button>
                 </div>
-                {errors.owns_property && (
-                  <p id="owns_property-error" className="text-sm italic text-red-600">
-                    {errors.owns_property}
+                {errors.owns_property_string && (
+                  <p id="owns_property_string-error" className="text-sm italic text-red-600">
+                    {errors.owns_property_string}
                   </p>
                 )}
               </div>
@@ -218,7 +235,7 @@ export default function EligibilityForm() {
         </>
       )}
 
-      {errors.owns_property && (
+      {errors.owns_property_string && (
         <p className="mt-4 text-base italic text-red-500 bg-red-100 px-4 py-2 max-w-max border-l-4 border-red-500" role="alert">
           Please select whether you currently own a property.
         </p>

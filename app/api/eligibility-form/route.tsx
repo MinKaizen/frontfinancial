@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { hubspotUpsertContact } from "@/utils/hubspotUpsertContact";
+import { hubspotSubmitForm } from "@/utils/hubspotSubmitForm";
 
 const toAuMobileE164 = (input: string) => {
   const d = input.replace(/\D/g, "");
@@ -13,7 +13,7 @@ const toAuMobileE164 = (input: string) => {
 
 const AU_MOBILE_E164 = /^\+614\d{8}$/;
 
-const contactSchema = z.object({
+export const contactSchema = z.object({
   firstname: z.string().trim().min(1, "First name is required"),
   lastname: z.string().trim().min(1, "Last name is required"),
   phone: z
@@ -24,16 +24,18 @@ const contactSchema = z.object({
       message:
         "Phone must be an Australian mobile (e.g. 04xx xxx xxx or +61 4xx xxx xxx).",
     }),
-  owns_property: z
+  owns_property_string: z
     .enum(["true", "false"], "Please select whether you currently own a property."),
-  email: z.string().trim().email("Valid email required"),
+  email: z.email("Valid email required").trim(),
   contact_source: z.string().optional(),
 });
 
 export async function POST(req: NextRequest) {
   try {
     const raw = (await req.json().catch(() => ({}))) as Record<string, unknown>;
-    const parsed = contactSchema.safeParse(raw);
+    const fields = raw.fields ?? {}
+    const meta = raw.meta ?? {}
+    const parsed = contactSchema.safeParse(fields);
 
     if (!parsed.success) {
       const { fieldErrors } = parsed.error.flatten();
@@ -44,13 +46,20 @@ export async function POST(req: NextRequest) {
     }
 
     try {
-      const contact = await hubspotUpsertContact(parsed.data);
+      const formId = process.env.HUBSPOT_ELIGIBILITY_FORM_GUID ?? ''
+      let data
 
-      return NextResponse.json({ contact }, { status: 200 });
+      if (meta) {
+        data = await hubspotSubmitForm(formId, parsed.data, meta);
+      } else {
+        data = await hubspotSubmitForm(formId, parsed.data);
+      }
+
+      return NextResponse.json(data, { status: 200 });
     } catch (e: any) {
       const message = e instanceof Error ? e.message : String(e);
       return NextResponse.json(
-        { error: "hubspot_upsert_failed", message },
+        { error: "hubspot_form_submit_failed", message },
         { status: 502 }
       );
     }

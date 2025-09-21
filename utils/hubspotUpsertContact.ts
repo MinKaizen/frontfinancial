@@ -6,7 +6,7 @@ export type UpsertContactInput = {
   email: string;
   firstname?: string;
   lastname?: string;
-  owns_property?: "true" | "false" | boolean;
+  owns_property_string?: "true" | "false";
   phone?: string;
   contact_source?: string;
 };
@@ -22,7 +22,7 @@ const mapSimpleToContact = (o: SimplePublicObject): UpsertedHubSpotContact => ({
     firstname: o.properties?.firstname ?? "",
     hs_object_id: o.properties?.hs_object_id ?? o.id,
     lastname: o.properties?.lastname ?? "",
-    owns_property: o.properties?.owns_property === "true" ? "true" : "false",
+    owns_property_string: o.properties?.owns_property_string === "true" ? "true" : "false",
     contact_source: o.properties?.contact_source ?? "",
     ...(o.properties?.phone ? { phone: o.properties.phone } : {}),
   },
@@ -41,8 +41,8 @@ export async function hubspotUpsertContact(input: UpsertContactInput): Promise<U
   if (typeof input.firstname !== "undefined") properties.firstname = input.firstname;
   if (typeof input.lastname !== "undefined") properties.lastname = input.lastname;
   if (typeof input.phone !== "undefined") properties.phone = input.phone;
-  if (typeof input.owns_property !== "undefined") {
-    properties.owns_property = typeof input.owns_property === "boolean" ? (input.owns_property ? "true" : "false") : input.owns_property;
+  if (typeof input.owns_property_string !== "undefined") {
+    properties.owns_property_string = typeof input.owns_property_string === "boolean" ? (input.owns_property_string ? "true" : "false") : input.owns_property_string;
   }
   if (typeof input.contact_source !== "undefined") properties.contact_source = input.contact_source;
 
@@ -54,7 +54,7 @@ export async function hubspotUpsertContact(input: UpsertContactInput): Promise<U
           "firstname",
           "lastname",
           "hs_object_id",
-          "owns_property",
+          "owns_property_string",
           "phone",
           "contact_source",
         ]);

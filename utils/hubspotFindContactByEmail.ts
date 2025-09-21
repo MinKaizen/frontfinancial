@@ -9,7 +9,7 @@ export type HubSpotContact = {
     firstname: string;
     hs_object_id: string;
     lastname: string;
-    owns_property: "true" | "false";
+    owns_property_string: "true" | "false";
     contact_source?: string;
   };
 }
@@ -22,7 +22,7 @@ const mapSimpleToContact = (o: SimplePublicObject): HubSpotContact => ({
     hs_object_id: o.properties?.hs_object_id ?? o.id,
     lastname: o.properties?.lastname ?? '',
     // normalize to the literal union
-    owns_property: (o.properties?.owns_property === 'true' ? 'true' : 'false'),
+    owns_property_string: (o.properties?.owns_property_string === 'true' ? 'true' : 'false'),
     contact_source: o.properties?.contact_source ?? '',
   },
 });;
@@ -43,7 +43,7 @@ export async function hubspotFindContactByEmail(email: string): Promise<HubSpotC
       "firstname",
       "lastname",
       "hs_object_id",
-      "owns_property",
+      "owns_property_string",
       "contact_source",
     ],
     limit: 1,
