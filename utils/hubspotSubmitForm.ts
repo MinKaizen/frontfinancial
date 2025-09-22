@@ -52,12 +52,7 @@ export async function hubspotSubmitForm(
   // HubSpot expects [{ name, value }, ...]
   const normalizedFields = Object.entries(fields).map(([name, value]) => ({
     name,
-    value:
-      typeof value === "string" ||
-      typeof value === "number" ||
-      typeof value === "boolean"
-        ? String(value)
-        : JSON.stringify(value),
+    value,
   }));
 
   const body: any = {
