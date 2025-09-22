@@ -76,7 +76,7 @@ export async function hubspotSubmitForm(
 
   const portalIdEncoded = encodeURIComponent(process.env.HUBSPOT_PORTAL_ID ?? '')
   const formIdEncoded = encodeURIComponent(formId)
-  const endpoint = `https://api.hsforms.com/submissions/v3/integration/submit/${portalIdEncoded}/${formIdEncoded}`;
+  const endpoint = `https://api.hsforms.com/submissions/v3/integration/secure/submit/${portalIdEncoded}/${formIdEncoded}`;
 
   const res = await fetch(endpoint, {
     method: "POST",
