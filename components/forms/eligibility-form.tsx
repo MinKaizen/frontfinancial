@@ -18,13 +18,17 @@ export default function EligibilityForm() {
   const [hutk, setHutk] = useState<string | null>(null);
 
   useEffect(() => {
-    setPageUrl(window.location.href ?? '');
-    setContactSource(pageUrl)
-    setPageName(window.location.pathname)
+    const href = window.location.href ?? '';
+    const pathname = window.location.pathname ?? '';
+
+    setPageUrl(href);
+    setContactSource(href);
+    setPageName(pathname);
 
     const hutkMatch = document.cookie.match(/hubspotutk=([^;]+)/);
-    if (hutkMatch) setHutk(hutkMatch[1]);
+    if (hutkMatch) setHutk(decodeURIComponent(hutkMatch[1]));
   }, []);
+
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -51,14 +55,14 @@ export default function EligibilityForm() {
         meta: {
           pageUrl,
           pageName,
-          ...(hutk ? {hutk} : {}),
+          ...(hutk ? { hutk } : {}),
         },
       })
     }
-    console.log({payload})
+    console.log({ payload })
     const res = await fetch('/api/eligibility-form', payload);
     const json = await res.json()
-    console.log({responseJson: json})
+    console.log({ responseJson: json })
 
     if (res.ok) {
       setStatus('ok');
