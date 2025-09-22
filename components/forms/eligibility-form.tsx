@@ -88,6 +88,7 @@ export default function EligibilityForm() {
             <div className="relative border-b pt-3 pb-1">
               <input
                 id="firstname"
+                name="firstname"
                 type="text"
                 required
                 placeholder=" "
@@ -107,6 +108,7 @@ export default function EligibilityForm() {
             <div className="relative border-b pt-3 pb-1">
               <input
                 id="lastname"
+                name="lastname"
                 type="text"
                 required
                 placeholder=" "
@@ -126,6 +128,7 @@ export default function EligibilityForm() {
             <div className="relative border-b pt-3 pb-1 md:col-span-2">
               <input
                 id="email"
+                name="email"
                 type="email"
                 required
                 placeholder=" "
@@ -145,6 +148,7 @@ export default function EligibilityForm() {
             <div className="relative border-b pt-3 pb-1 md:col-span-2">
               <input
                 id="phone"
+                name="phone"
                 type="tel"
                 required
                 placeholder=" "
@@ -226,6 +230,11 @@ export default function EligibilityForm() {
               </div>
             </div>
           </div>
+
+          <input type="hidden" name="owns_property_string" value={owns_property_string} />
+          <input type="hidden" name="contact_source" value={contact_source} />
+          <input type="hidden" name="0-1/owns_property_string" value={owns_property_string} />
+          <input type="hidden" name="0-1/contact_source" value={contact_source} />
 
           <div className="flex pt-4">
             <button
