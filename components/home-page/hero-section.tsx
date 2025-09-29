@@ -11,15 +11,8 @@ export function HeroSection() {
         height={15}
         priority
       />
-      <p className="uppercase text-sm md:text-base lg:text-lg font-heading text-center">sharp-minded, never-sleeping, tech-driven financial partners <br className="hidden lg:inline-block" />who make your money work as hard as we do.</p>
-      <Image
-        className="w-full max-w-[89px] h-auto"
-        src="/frontfinancial-logo-monogram-icon-white.svg"
-        alt="Next.js logo"
-        width={89}
-        height={51}
-        priority
-      />
+      <p className="uppercase text-sm md:text-base lg:text-lg font-heading text-center">sharp-minded, never-sleeping, tech-driven financial partners</p>
+      <div></div>
     </div>
   );
 }
