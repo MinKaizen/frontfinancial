@@ -57,3 +57,35 @@ h5,
 h6 {
   font-family: var(--font-heading);
 }
+
+.arrow{
+  /* tweak these per instance via inline style or a class */
+  --len: 200px;      /* shaft length */
+  --thick: 4px;      /* shaft thickness */
+  --head: 10px;      /* head size */
+
+  position: relative;
+  display: inline-block;
+  width: var(--len);
+  height: var(--thick);
+  background: currentColor;      /* arrow uses the element's color */
+  border-radius: calc(var(--thick)/2); /* rounded shaft optional */
+}
+
+/* Arrowhead (right-pointing by default) */
+.arrow::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(50%,-50%); /* pull triangle’s flat side to the shaft end */
+  width: 0; height: 0;
+  border: var(--head) solid transparent;
+  border-left-color: currentColor;  /* right-pointing triangle */
+}
+
+/* Directions via rotate */
+.arrow.up   { transform: rotate(-90deg); transform-origin: left center; }
+.arrow.down { transform: rotate(90deg);  transform-origin: left center; }
+.arrow.left { transform: rotate(180deg); transform-origin: left center; }
+
