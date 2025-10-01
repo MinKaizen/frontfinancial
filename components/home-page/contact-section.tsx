@@ -2,7 +2,7 @@ import EligibilityForm from "@/components/forms/eligibility-form";
 
 export function ContactSection() {
   return (
-    <div className="bg-tan-light">
+    <div className="bg-tan">
       <div className="py-15 px-5">
         <div className="flex flex-col-reverse lg:grid md:grid-cols-[1fr_auto] content-center items-center gap-x-20">
           <div className="grid gap-15">
