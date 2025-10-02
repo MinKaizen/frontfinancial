@@ -4,7 +4,7 @@ import Image from "next/image"
 export function Header() {
   return (
     <>
-      <div className="grid grid-cols-[1fr_auto_1fr] px-12 py-7">
+      <div className="grid grid-cols-[1fr_auto_1fr] px-5 py-7">
         <div className="flex flex-row gap-12 text-[18px]">
           <Link href="/">Home</Link>
           <Link href="/about">About</Link>
