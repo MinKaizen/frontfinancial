@@ -32,7 +32,7 @@
   --color-foreground: var(--foreground);
   --font-body: "Times New Roman", ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans";
   --font-heading : "Kento", ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans";
-  --font-size-body: 15px;
+  --text-body: 15px;
 
   /* Custom palette from provided image */
   --color-royal-navy: #3f404f;
