@@ -7,7 +7,7 @@ export function FooterSection() {
 
   return (
     <div className="grid justify-items-center py-10 px-5 h-[600px] grid-rows-[auto_1fr_auto] items-center">
-      <p className="text-right leading-none justify-self-end">Sharp-minded, never-sleeping, tech-driven <br className="hidden sm:inline-block" /> financial partners who make your money <br className="hidden sm:inline-block" />work as hard as we do.</p>
+      <p className="text-right leading-none justify-self-end">Sharp-minded, never-sleeping, tech-driven <br className="hidden sm:inline-block" /> financial partners.</p>
       <Image
         className="w-full max-w-[331px] h-auto"
         src="/frontfinancial-logo-script-tan.svg"
