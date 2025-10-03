@@ -14,8 +14,8 @@ export function ServiceSection() {
             className="w-full aspect-[448/414] max-w-[448px] justify-self-end hidden lg:block"
             src="/buildings.avif"
             alt="Sydney Opera House"
-            width={930}
-            height={581}
+            width={450}
+            height={414}
             loading="lazy"
           />
           <div className="px-5 pt-[80px] lg:pt-0 pb-[45px]">
