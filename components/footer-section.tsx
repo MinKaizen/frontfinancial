@@ -32,7 +32,7 @@ export function FooterSection() {
             <Link href="/contact">Contact Us</Link>
           </div>
         </div>
-        <div>
+        <div className="md:flex flex-row gap-12">
           <div className="flex flex-col">
             <Link href={instagramUrl}>Instagram</Link>
             <Link href={linkedInUrl}>LinkedIn</Link>
