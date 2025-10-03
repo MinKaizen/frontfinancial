@@ -1,0 +1,124 @@
+import Image from "next/image"
+import Link from "next/link"
+
+type ProfileCardProps = {
+  img: string,
+  name: string,
+  title: string,
+  phone: string,
+  email: string,
+  linkedin: string,
+}
+const ProfileCard = ({
+  img,
+  name,
+  title,
+  phone,
+  email,
+  linkedin,
+}: ProfileCardProps) => {
+  return (
+    <article className="grid gap-4">
+      <Image
+        className="object-top object-cover w-full sm:w-full h-auto aspect-square sm:aspect-auto"
+        src={img}
+        alt={name}
+        width={444}
+        height={510}
+      />
+      <div className="relative grid gap-3 content-start items-start">
+        <h3 className="text-[14px] lg:text-body">{name}</h3>
+        <Link href={linkedin} className="absolute top-0 right-0 w-[24px] h-auto">
+          <Image
+            className="w-full h-full"
+            src="/icon-linkedin-off-white-on-royal-navy.svg"
+            alt="LinkedIn"
+            width={31}
+            height={31}
+          />
+        </Link>
+        <div>
+          <div className="font-body text-[14px]">{title}</div>
+          <Link href={`tel:${phone.replace(/\s+/g, "")}`} className="font-body text-[14px] block underline break-all">{phone}</Link>
+          <Link href={`mailto:${email}`} className="font-body text-[14px] block underline break-all">{email}</Link>
+        </div>
+      </div>
+    </article>
+  )
+}
+
+export function TeamSection() {
+  return (
+    <div className="bg-white text-royal-navy">
+      <div className="px-5 py-20">
+        <h2 className="text-body font-heading uppercase">The team</h2>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7 mt-10">
+          <ProfileCard
+            img="/profile-william-banham.avif"
+            name="William Banham"
+            title="Managing Director"
+            phone="0402 148 253"
+            email="williambanham@frontfinancial.com.au"
+            linkedin="https://www.linkedin.com/company/front-financial"
+          />
+          <ProfileCard
+            img="/profile-ryan-sweeney.avif"
+            name="Ryan Sweeney"
+            title="Chief Executive Officer"
+            phone="0466 634 494"
+            email="ryansweeney@frontfinancial.com.au"
+            linkedin="https://www.linkedin.com/company/front-financial"
+          />
+          <ProfileCard
+            img="/profile-lachlan-pegler.avif"
+            name="Lachlan Pegler"
+            title="Lending Partner"
+            phone="0415 605 535"
+            email="lachlanpegler@frontfinancial.com.au"
+            linkedin="https://www.linkedin.com/company/front-financial"
+          />
+          <ProfileCard
+            img="/profile-dylan-tennyson.avif"
+            name="Dylan Tennyson"
+            title="Lending Partner"
+            phone="0400 518 130"
+            email="dylantennyson"
+            linkedin="https://www.linkedin.com/company/front-financial"
+          />
+          <ProfileCard
+            img="/profile-cooper-sergis.avif"
+            name="Cooper Sergis"
+            title="Lending Partner"
+            phone="0406 135 505"
+            email="coopersergis@frontfinancial.com.au"
+            linkedin="https://www.linkedin.com/company/front-financial"
+          />
+          <ProfileCard
+            img="/profile-bill-de-vries.avif"
+            name="Bill De Vries"
+            title="Associate"
+            phone="0438 488 500"
+            email="bill@frontfinancial.com.au"
+            linkedin="https://www.linkedin.com/company/front-financial"
+          />
+          <ProfileCard
+            img="/profile-will-gerstl.avif"
+            name="Will Gerstl"
+            title="Associate"
+            phone="0424 383 296"
+            email="williamgerstl"
+            linkedin="https://www.linkedin.com/company/front-financial"
+          />
+          <ProfileCard
+            img="/profile-antoine-gizardin.avif"
+            name="Antoine Gizardin"
+            title="Associate"
+            phone="0423 938 756"
+            email="antoinegizardin@frontfinancial.com.au"
+            linkedin="https://www.linkedin.com/company/front-financial"
+          />
+        </div>
+      </div>
+    </div>
+  )
+}
