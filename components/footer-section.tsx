@@ -6,7 +6,7 @@ export function FooterSection() {
   const linkedInUrl = process.env.LINKED_IN_URL ?? '';
 
   return (
-    <div className="grid py-10 px-5 min-h-[600px] md:grid-cols-[1fr_auto_1fr] content-stretch gap-y-8">
+    <div className="bg-royal-navy grid py-10 px-5 min-h-[600px] md:grid-cols-[1fr_auto_1fr] content-stretch gap-y-8">
       <Image
         className="w-full max-w-[331px] h-auto justify-self-center self-center md:hidden"
         src="/frontfinancial-logo-script-tan.svg"
