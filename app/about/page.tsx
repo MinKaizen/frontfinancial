@@ -9,7 +9,7 @@ import { FooterSection } from "@/components/footer-section"
 export default function Contact() {
   return (
     <div className="bg-white">
-      <Header />
+      <Header bgColor="white" textColor="royal-navy" />
       <HeroSection />
       <AboutSection />
       <ProcessSection />
