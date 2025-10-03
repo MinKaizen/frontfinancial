@@ -13,7 +13,7 @@ export function Header({bgColor = "transparent", textColor = "white"}: Props) {
 
   return (
     <div className={"h-[80px] backdrop-blur group-data-[sticky=true]:${bgClass}/90 group-data-[sticky=true]:h-[50px] transition duration text-[18px] group-data-[sticky=true]:text-body grid content-center " + containerClass}>
-      <div className="grid grid-cols-[1fr_auto_1fr] px-5">
+      <div className="grid grid-cols-[auto_1fr_auto] lg:grid-cols-[1fr_auto_1fr] px-5">
         <div className="flex flex-row gap-12">
           <Link href="/">Home</Link>
           <Link href="/about">About</Link>
