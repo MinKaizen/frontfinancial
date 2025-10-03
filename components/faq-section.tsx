@@ -1,9 +1,17 @@
 import Image from "next/image"
 import Link from "next/link"
 
-export function FaqSection() {
+type Props = {
+  bgColor?: string,
+  textColor?: string,
+}
+
+export function FaqSection({bgColor = "white", textColor = "royal-navy"}: Props) {
+  const bgClass = `bg-${bgColor}`
+  const textClass = `text-${textColor}`
+  const containerClass = `${bgClass} ${textClass}`
   return (
-    <div className="bg-white text-charcoal">
+    <div className={containerClass}>
       <div className="flex flex-col-reverse lg:grid grid-cols-2">
         <div className="px-5 py-8 lg:py-12 xl:py-18 lg:grid grid-rows-[auto_1fr_1fr]">
           <h2 className="pb-12 text-body">Frequently asked questions.</h2>
