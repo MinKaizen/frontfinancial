@@ -3,7 +3,7 @@ import TestimonialCarousel from "./testimonial-carousel";
 export function TestimonialSection() {
   return (
     <div className="bg-tan text-white text-[18px]">
-      <div className="py-20 md:py-30 lg:py-48 px-5">
+      <div className="py-24 md:min-h-[400px] lg:min-h-[520px] px-5 grid place-items-center">
         <div className="max-w-[480px] mx-auto">
           <div className="text-center mb-[1em]">They said it:</div>
           <TestimonialCarousel />
