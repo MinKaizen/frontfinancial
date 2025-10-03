@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { Header } from "@/components/header"
 
 export function ContactSection() {
   const style = {
@@ -8,9 +7,6 @@ export function ContactSection() {
 
   return (
     <div style={style} className="bg-center bg-cover text-white relative">
-      <div className="bg-transparent absolute top-0 left-0 w-full">
-        <Header bgColor="transparent" textColor="white"/>
-      </div>
       <div className="px-5 py-10 min-h-[500px] lg:min-h-[850px] grid justify-center justify-items-center content-center">
         <h2 className="text-body text-center uppercase">Available whenever you need us <br className="hidden sm:block"/>— 365 days a year, 366 on leap years.</h2>
         <Link href="/contact" className="block w-max relative cursor-pointer mt-[45px] lg:mt-[70px]">

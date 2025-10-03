@@ -1,3 +1,4 @@
+import { Header } from "@/components/header"
 import { ContactSection } from "@/components/contact-section"
 import { ServicesSection } from "@/components/services-page/services-section"
 import { FooterSection } from "@/components/footer-section"
@@ -7,7 +8,12 @@ import { FaqSection } from "@/components/faq-section"
 export default function Contact() {
   return (
     <>
-      <ContactSection />
+      <div className="relative">
+        <div className="bg-transparent absolute top-0 left-0 w-full z-10">
+          <Header bgColor="transparent" textColor="white"/>
+        </div>
+        <ContactSection />
+      </div>
       <ServicesSection />
       <TestimonialSection />
       <FaqSection />
