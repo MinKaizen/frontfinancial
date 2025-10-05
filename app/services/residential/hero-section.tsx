@@ -50,10 +50,9 @@ export function HeroSection() {
             <h1 className="font-heading text-body leading-tight uppercase">{service.title}</h1>
             <div className="font-heading text-body leading-tight uppercase">We cut through the noise</div>
             <div className="mt-7 lg:mt-[40px] xl:mt-[75px] text-[18px]">
-              From first to second mortgages, we structure the deal, secure the right
-              <br />
-              lender, and manage every detail from start to finish.
-              <br />
+              <div className="max-w-[550px]">
+                From first to second mortgages, we structure the deal, secure the right lender, and manage every detail from start to finish.
+              </div>
               You move in. We handle the rest.
               <br />
               Fast. Precise. Flawless
