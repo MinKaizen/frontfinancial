@@ -1,4 +1,4 @@
-import { Header } from "@/components/header"
+import { StickyHeader } from "@/components/sticky-header"
 import { HeroSection } from "@/components/about-page/hero-section"
 import { AboutSection } from "@/components/about-page/about-section"
 import { ProcessSection } from "@/components/about-page/process-section"
@@ -9,7 +9,7 @@ import { FooterSection } from "@/components/footer-section"
 export default function Contact() {
   return (
     <div className="bg-white">
-      <Header bgColor="white" textColor="royal-navy" />
+      <StickyHeader bgColor="white" textColor="royal-navy" />
       <HeroSection />
       <AboutSection />
       <ProcessSection />

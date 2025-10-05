@@ -3,15 +3,19 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
+import type { MenuInfo } from "@/types/menu-info"
 
 type Props = {
+  menuInfo: MenuInfo,
   bgColor?: string
   textColor?: string
+  sticky?: boolean,
 }
 
-export function MobileHeader({ bgColor = "transparent", textColor = "white" }: Props) {
+export function MobileHeader({ menuInfo, bgColor = "transparent", textColor = "white", sticky = false }: Props) {
   const [open, setOpen] = useState(false)
 
+  const menuFlat = menuInfo.flat()
   const bgClass = `bg-${bgColor}`
   const textClass = `text-${textColor}`
   const containerClass = `${bgClass} ${textClass}`
@@ -37,7 +41,7 @@ export function MobileHeader({ bgColor = "transparent", textColor = "white" }: P
   }, [open])
 
   return (
-    <div className={"h-[64px] grid content-center " + containerClass}>
+    <div className={"md:hidden h-[60px] grid content-center z-10 group -mb-px " + containerClass} data-sticky={sticky ? "true" : "false"}>
       <div className="px-5 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2" aria-label="Home">
           <Image
@@ -83,13 +87,13 @@ export function MobileHeader({ bgColor = "transparent", textColor = "white" }: P
         role="dialog"
         aria-modal="true"
         aria-label="Mobile menu"
-        className={`fixed top-0 right-0 bottom-0 z-50 w-[85vw] max-w-[300px] bg-royal-navy text-white shadow-2xl transform transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed top-0 right-0 bottom-0 z-50 w-[85vw] max-w-[300px] bg-white text-royal-navy shadow-2xl transform transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"}`}
         onClick={(e) => e.stopPropagation()}
       >
         <div className="h-[64px] px-5 flex items-center justify-between border-b border-black/10">
           <Image
-            className="w-full max-w-[140px] h-auto group-data-[sticky=true]:max-w-[180px]"
-            src={ `/frontfinancial-logo-primary-${textColor}.svg` }
+            className="w-full max-w-[140px] h-auto"
+            src={ `/frontfinancial-logo-primary-royal-navy.svg` }
             alt="Next.js logo"
             width={220}
             height={15}
@@ -107,19 +111,12 @@ export function MobileHeader({ bgColor = "transparent", textColor = "white" }: P
           </button>
         </div>
         <div className="p-5">
-          <ul className="space-y-4 text-lg">
-            <li>
-              <Link href="/" onClick={() => setOpen(false)} className="block py-2">Home</Link>
-            </li>
-            <li>
-              <Link href="/about" onClick={() => setOpen(false)} className="block py-2">About</Link>
-            </li>
-            <li>
-              <Link href="/services" onClick={() => setOpen(false)} className="block py-2">Services</Link>
-            </li>
-            <li>
-              <Link href="/contact" onClick={() => setOpen(false)} className="block py-2">Contact</Link>
-            </li>
+          <ul className="space-y-2 text-lg">
+            {menuFlat.map((linkInfo, index) => (
+              <li key={index}>
+                <Link href={linkInfo.url} onClick={() => setOpen(false)} className="block py-2">{linkInfo.title}</Link>
+              </li>
+            ))}
           </ul>
         </div>
       </nav>
