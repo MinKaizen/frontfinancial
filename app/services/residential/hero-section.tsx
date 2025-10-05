@@ -63,7 +63,7 @@ export function HeroSection() {
             {service.features.map((feature, index) => (
               <div key={index}>
                 <div>{feature.title}</div>
-                <div>{feature.description}</div>
+                <div className="max-w-[550px]">{feature.description}</div>
                 <hr className="mt-7" />
               </div>
             ))}
