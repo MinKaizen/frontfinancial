@@ -1,8 +1,9 @@
 import Image from "next/image"
 
 const service = {
-  title: "Commercial Lending",
   slug: "commercial",
+  title: "Commercial Lending",
+  subtitle: "We simplify the complexity.",
   logoWidth: 224,
   features: [
     {
@@ -48,7 +49,7 @@ export function HeroSection() {
         <div className="grid self-stretch grid-rows-[1fr_auto] gap-10">
           <div >
             <h1 className="font-heading text-body leading-tight uppercase">{service.title}</h1>
-            <div className="font-heading text-body leading-tight uppercase">We cut through the noise</div>
+            <div className="font-heading text-body leading-tight uppercase">{service.subtitle}</div>
             <div className="mt-7 lg:mt-[40px] xl:mt-[75px] text-[18px]">
               Bid deals demand smart structures - and we deliver.
               <div className="max-w-[515px]">
