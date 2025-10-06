@@ -1,0 +1,14 @@
+# Sitemap ignore rules (gitignore-style)
+# Matches URL paths generated from app/ routes.
+# Supported: **, *, ?, leading '/', trailing '/' (directory), negation with '!'
+
+# Defaults (the script already ignores these). Keep for clarity or adjust.
+/lander/**
+/api/**
+
+# Example: allow a specific lander page back into the sitemap
+# !#/lander/0   # remove the leading '#' to enable this override
+
+# Add more rules below as needed
+# /drafts/**
+# /(marketing)/**  # route groups are stripped in URLs, use resulting path
