@@ -3,8 +3,9 @@ import { Metadata } from 'next';
 import Image from 'next/image';
 
 export const metadata: Metadata = {
-  title: "FRONT Financial",
-  description: "Sharp-minded, never-sleeping, tech-driven financial partners who make your money work as hard as we do.",
+  title: "Equity Eligibility Form",
+  description: "Find out if you’re eligible to access equity and discuss options with our team.",
+  alternates: { canonical: "/equity-eligibility-form" },
 };
 
 const ContactForm = () => {

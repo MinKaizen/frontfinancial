@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { StickyHeader } from "@/components/sticky-header"
 import { HeroSection } from "@/components/about-page/hero-section"
 import { AboutSection } from "@/components/about-page/about-section"
@@ -5,6 +6,13 @@ import { ProcessSection } from "@/components/about-page/process-section"
 import { TeamSection } from "@/components/about-page/team-section"
 import { FaqSection } from "@/components/faq-section"
 import { FooterSection } from "@/components/footer-section"
+
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Learn about FRONT Financial’s mission, approach, and team delivering tech-driven finance outcomes.",
+  alternates: { canonical: "/about" },
+};
 
 export default function Contact() {
   return (

@@ -1,9 +1,17 @@
+import type { Metadata } from "next";
 import { StickyHeader } from "@/components/sticky-header"
 import { ContactSection } from "@/components/contact-section"
 import { ServicesSection } from "@/components/services-page/services-section"
 import { FooterSection } from "@/components/footer-section"
 import { TestimonialSection } from "@/components/testimonial-section"
 import { FaqSection } from "@/components/faq-section"
+
+export const metadata: Metadata = {
+  title: "Services",
+  description:
+    "Explore residential, commercial, business, and private finance solutions tailored to your needs.",
+  alternates: { canonical: "/services" },
+};
 
 export default function Contact() {
   return (
