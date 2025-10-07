@@ -59,7 +59,7 @@ export function TeamSection() {
             title="Managing Director"
             phone="0402 148 253"
             email="williambanham@frontfinancial.com.au"
-            linkedin="https://www.linkedin.com/company/front-financial"
+            linkedin="https://www.linkedin.com/in/william-banham-2a9631214/?originalSubdomain=au"
           />
           <ProfileCard
             img="/profile-ryan-sweeney.avif"
@@ -67,7 +67,7 @@ export function TeamSection() {
             title="Chief Executive Officer"
             phone="0466 634 494"
             email="ryansweeney@frontfinancial.com.au"
-            linkedin="https://www.linkedin.com/company/front-financial"
+            linkedin="https://www.linkedin.com/in/ryan-sweeney-39a389191/"
           />
           <ProfileCard
             img="/profile-lachlan-pegler.avif"
@@ -75,7 +75,7 @@ export function TeamSection() {
             title="Lending Partner"
             phone="0415 605 535"
             email="lachlanpegler@frontfinancial.com.au"
-            linkedin="https://www.linkedin.com/company/front-financial"
+            linkedin="https://www.linkedin.com/in/lachlan-pegler-b352b9309/?originalSubdomain=au"
           />
           <ProfileCard
             img="/profile-dylan-tennyson.avif"
@@ -83,7 +83,7 @@ export function TeamSection() {
             title="Lending Partner"
             phone="0400 518 130"
             email="dylantennyson"
-            linkedin="https://www.linkedin.com/company/front-financial"
+            linkedin="https://www.linkedin.com/in/dylan-tennyson-852497267/?originalSubdomain=au"
           />
           <ProfileCard
             img="/profile-cooper-sergis.avif"
@@ -91,7 +91,7 @@ export function TeamSection() {
             title="Lending Partner"
             phone="0406 135 505"
             email="coopersergis@frontfinancial.com.au"
-            linkedin="https://www.linkedin.com/company/front-financial"
+            linkedin="https://www.linkedin.com/in/cooper-sergis/"
           />
           <ProfileCard
             img="/profile-bill-de-vries.avif"
@@ -99,7 +99,7 @@ export function TeamSection() {
             title="Associate"
             phone="0438 488 500"
             email="bill@frontfinancial.com.au"
-            linkedin="https://www.linkedin.com/company/front-financial"
+            linkedin="https://www.linkedin.com/in/willdevries/"
           />
           <ProfileCard
             img="/profile-will-gerstl.avif"
@@ -107,7 +107,7 @@ export function TeamSection() {
             title="Associate"
             phone="0424 383 296"
             email="williamgerstl"
-            linkedin="https://www.linkedin.com/company/front-financial"
+            linkedin="https://www.linkedin.com/in/will-gerstl-935b19231/"
           />
           <ProfileCard
             img="/profile-antoine-gizardin.avif"
@@ -115,7 +115,7 @@ export function TeamSection() {
             title="Associate"
             phone="0423 938 756"
             email="antoinegizardin@frontfinancial.com.au"
-            linkedin="https://www.linkedin.com/company/front-financial"
+            linkedin="https://www.linkedin.com/in/antoine-gizardin-a23874243/"
           />
         </div>
       </div>
