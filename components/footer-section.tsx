@@ -26,7 +26,7 @@ export function FooterSection() {
             <Link href="/services/residential">Residential</Link>
             <Link href="/services/commercial">Commercial</Link>
             <Link href="/services/business">Business</Link>
-            <Link href="/services/equity">Equity</Link>
+            <Link href="/services/private">Private</Link>
           </div>
           <div className="flex flex-col">
             <Link href="/contact">Contact Us</Link>
