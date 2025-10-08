@@ -2,7 +2,7 @@ import ContactForm from "@/components/forms/contact-form"
 
 export function ContactSection() {
   return (
-    <div className="bg-soft-navy px-5 py-20 lg:h-[80vh] grid place-items-center">
+    <div className="bg-royal-navy text-tan px-5 py-20 lg:h-[80vh] grid place-items-center">
       <div className="w-full max-w-[850px] mx-auto">
         <h1 className="text-center text-[15px]">Contact Us</h1>
         <p className="text-center font-heading text-[15px]">

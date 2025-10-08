@@ -209,7 +209,6 @@ export default function ContactForm() {
                   ["--len" as any]: "100%",
                   ["--thick" as any]: "1px",
                   ["--head" as any]: "4px",
-                  color: "#fff",
                 }}
               />
             </button>

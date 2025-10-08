@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { StickyHeader } from "@/components/sticky-header"
 import { ContactSection } from "@/components/contact-page/contact-section"
+import { FaqSection } from "@/components/faq-section"
 import { FooterSection } from "@/components/footer-section"
 
 export const metadata: Metadata = {
@@ -13,8 +14,9 @@ export const metadata: Metadata = {
 export default function Contact() {
   return (
     <>
-      <StickyHeader bgColor="soft-navy" textColor="white"></StickyHeader>
+      <StickyHeader bgColor="royal-navy" textColor="tan"></StickyHeader>
       <ContactSection />
+      <FaqSection bgColor="tan-light" />
       <FooterSection />
     </>
   );
