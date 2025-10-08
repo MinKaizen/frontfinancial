@@ -19,13 +19,16 @@ const ProfileCard = ({
 }: ProfileCardProps) => {
   return (
     <article className="grid gap-4">
-      <Image
-        className="object-top object-cover w-full sm:w-full h-auto aspect-square sm:aspect-auto"
-        src={img}
-        alt={name}
-        width={450}
-        height={514}
-      />
+      <div className="relative grayscale hover:grayscale-0">
+        <Image
+          className="object-top object-cover w-full sm:w-full h-auto aspect-square sm:aspect-auto"
+          src={img}
+          alt={name}
+          width={450}
+          height={514}
+        />
+        <div className="absolute top-0 left-0 w-full h-full bg-black/20 hover:opacity-0"></div>
+      </div>
       <div className="relative grid gap-3 content-start items-start">
         <h3 className="text-[14px] lg:text-body">{name}</h3>
         <Link href={linkedin} className="absolute top-0 right-0 w-[24px] h-auto">
