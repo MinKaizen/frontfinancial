@@ -154,22 +154,31 @@ export default function ContactForm() {
             </div>
 
             <div className="relative border-b pt-3 pb-1">
-              <input
+              <select
                 id="enquiryType"
                 name="enquiryType"
-                type="text"
                 required
-                placeholder=" "
                 value={enquiryType}
                 onChange={(e) => setEnquiryType(e.target.value)}
-                className="peer w-full bg-transparent outline-none"
-              />
-              <label
-                htmlFor="enquiryType"
-                className="pointer-events-none absolute left-0 top-0 translate-y-0 text-xs opacity-100 italic transition-all duration-150 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:opacity-70 peer-focus:top-0 peer-focus:translate-y-0 peer-focus:text-xs peer-focus:opacity-100"
+                className="peer w-full bg-transparent outline-none appearance-none pr-8"
               >
-                Enquiry Type
-              </label>
+                <option className="bg-royal-navy text-tan py-2" value="" disabled hidden>
+                  Enquiry type
+                </option>
+                <option className="bg-royal-navy text-tan py-2" value="Residential Lending">Residential Lending</option>
+                <option className="bg-royal-navy text-tan py-2" value="Commercial Lending">Commercial Lending</option>
+                <option className="bg-royal-navy text-tan py-2" value="Business Finance">Business Finance</option>
+                <option className="bg-royal-navy text-tan py-2" value="Private Lending">Private Lending</option>
+                <option className="bg-royal-navy text-tan py-2" value="General Enquiry">General Enquiry</option>
+              </select>
+              <svg
+                aria-hidden="true"
+                className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 h-4 w-4 opacity-70"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" />
+              </svg>
             </div>
 
             <div className="relative border-b pt-3 pb-1 col-span-full">
