@@ -226,7 +226,7 @@ export default function ContactForm() {
       )}
 
       {status === 'ok' && (
-        <p className="mx-auto mt-4 text-base italic text-emerald-700 bg-emerald-200 px-4 py-2 max-w-max border-l-4 border-emerald-700" role="status">
+        <p className="mx-auto mt-4 text-base italic text-white bg-emerald-600 px-4 py-2 max-w-max border-l-4 border-white" role="status">
           Thank you. We’ll be in touch shortly.
         </p>
       )}
