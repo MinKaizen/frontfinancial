@@ -33,6 +33,7 @@ export function HeroSection() {
             alt={service.title}
             width={ 910 }
             height={ 920 }
+            priority
           />
           <div className="absolute top-0 left-0 w-full h-full grid place-items-center">
             <Image
@@ -41,6 +42,7 @@ export function HeroSection() {
               src={`/f-${service.slug}-white.svg`}
               width={service.logoWidth}
               height={60}
+              priority
             />
           </div>
         </div>

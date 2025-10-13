@@ -14,7 +14,6 @@ export function FooterSection() {
         alt="Front Financial logo"
         width={331}
         height={53}
-        priority
       />
       <div className="grid sm:grid-cols-[auto_auto_1fr] justify-self-stretch gap-x-20">
         <div className="flex flex-col">

@@ -25,7 +25,6 @@ export function ServiceCard({backgroundImg, innerImg, url, alt, width}: Props) {
               alt={alt || ''}
               width={width}
               height={60}
-              priority
             />
           </div>
         </div>

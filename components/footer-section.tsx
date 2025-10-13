@@ -13,7 +13,6 @@ export function FooterSection() {
         alt="Front Financial logo"
         width={331}
         height={53}
-        priority
       />
       <div className="flex flex-row md:flex-col justify-between justify-self-stretch justify-items-start">
         <div className="flex flex-col gap-6">
