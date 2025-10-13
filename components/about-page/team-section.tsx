@@ -57,7 +57,7 @@ export function TeamSection() {
         <h2 className="text-body font-heading uppercase">The team</h2>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-7 mt-10">
           <ProfileCard
-            img="/profile-william-banham-hires.avif"
+            img="/profile-william-banham-700.avif"
             name="William Banham"
             title="Managing Director"
             phone="0402 148 253"
@@ -65,7 +65,7 @@ export function TeamSection() {
             linkedin="https://www.linkedin.com/in/william-banham-2a9631214/?originalSubdomain=au"
           />
           <ProfileCard
-            img="/profile-ryan-sweeney-hires.avif"
+            img="/profile-ryan-sweeney-700.avif"
             name="Ryan Sweeney"
             title="Chief Executive Officer"
             phone="0466 634 494"
@@ -73,7 +73,7 @@ export function TeamSection() {
             linkedin="https://www.linkedin.com/in/ryan-sweeney-39a389191/"
           />
           <ProfileCard
-            img="/profile-lachlan-pegler-hires.avif"
+            img="/profile-lachlan-pegler-700.avif"
             name="Lachlan Pegler"
             title="Lending Partner"
             phone="0415 605 535"
@@ -81,7 +81,7 @@ export function TeamSection() {
             linkedin="https://www.linkedin.com/in/lachlan-pegler-b352b9309/?originalSubdomain=au"
           />
           <ProfileCard
-            img="/profile-dylan-tennyson-hires.avif"
+            img="/profile-dylan-tennyson-700.avif"
             name="Dylan Tennyson"
             title="Lending Partner"
             phone="0400 518 130"
@@ -89,7 +89,7 @@ export function TeamSection() {
             linkedin="https://www.linkedin.com/in/dylan-tennyson-852497267/?originalSubdomain=au"
           />
           <ProfileCard
-            img="/profile-cooper-sergis-hires.avif"
+            img="/profile-cooper-sergis-700.avif"
             name="Cooper Sergis"
             title="Lending Partner"
             phone="0406 135 505"
@@ -97,7 +97,7 @@ export function TeamSection() {
             linkedin="https://www.linkedin.com/in/cooper-sergis/"
           />
           <ProfileCard
-            img="/profile-bill-de-vries-hires.avif"
+            img="/profile-bill-de-vries-700.avif"
             name="Bill De Vries"
             title="Associate"
             phone="0438 488 500"
@@ -105,7 +105,7 @@ export function TeamSection() {
             linkedin="https://www.linkedin.com/in/willdevries/"
           />
           <ProfileCard
-            img="/profile-will-gerstl-hires.avif"
+            img="/profile-will-gerstl-700.avif"
             name="Will Gerstl"
             title="Associate"
             phone="0424 383 296"
@@ -113,7 +113,7 @@ export function TeamSection() {
             linkedin="https://www.linkedin.com/in/will-gerstl-935b19231/"
           />
           <ProfileCard
-            img="/profile-antoine-gizardin-hires.avif"
+            img="/profile-antoine-gizardin-700.avif"
             name="Antoine Gizardin"
             title="Associate"
             phone="0423 938 756"
