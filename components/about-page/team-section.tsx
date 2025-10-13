@@ -21,11 +21,12 @@ const ProfileCard = ({
     <article className="grid gap-4">
       <div className="relative grayscale hover:grayscale-0">
         <Image
-          className="object-top object-cover w-full sm:w-full h-auto aspect-square sm:aspect-auto"
+          className="object-top object-cover w-full sm:w-full h-auto aspect-auto"
           src={img}
           alt={name}
           width={450}
           height={514}
+          sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33.33vw, (min-width: 640px) 50vw, 100vw"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black/20 hover:opacity-0"></div>
       </div>
