@@ -23,13 +23,9 @@ export function AboutSection() {
           />
         </div>
 
-        <Image 
-          className="w-full h-auto hidden lg:block"
-          src="/sydney-metro.avif"
-          alt="Sydney Metro"
-          width={ 920 }
-          height={ 970 }
-        />
+        <div className="w-full hidden lg:block aspect-[10/11] overflow-hidden relative">
+          <video className="absolute inset-0 w-full h-full object-cover" src="/metropolis-large.mp4" poster="/metropolis.avif" autoPlay loop muted playsInline />
+        </div>
       </div>
     </div>
   )
