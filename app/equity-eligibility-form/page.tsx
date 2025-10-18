@@ -25,11 +25,11 @@ const ContactForm = () => {
               className="mb-16 mx-auto"
             />
           </div>
-          <h2 
+          <h1 
             className="text-lg font-heading text-center mb-2 uppercase "
           >
             Take The First Step <span className="text-white">Towards A Solution</span>
-          </h2>
+          </h1>
           
           <p 
             className="text-center mb-12 text-lg text-white"
