@@ -26,7 +26,7 @@ export function Header({menuInfo, bgColor = "transparent", textColor = "white", 
           <Image
             className="w-full max-w-[220px] h-auto group-data-[sticky=true]:max-w-[200px]"
             src={ `/frontfinancial-logo-primary-${textColor}.svg` }
-            alt="Next.js logo"
+            alt="FRONT Financial Logo"
             width={220}
             height={15}
             priority

@@ -94,7 +94,7 @@ export function MobileHeader({ menuInfo, bgColor = "transparent", textColor = "w
           <Image
             className="w-full max-w-[140px] h-auto"
             src={ `/frontfinancial-logo-primary-royal-navy.svg` }
-            alt="Next.js logo"
+            alt="FRONT Financial Logo"
             width={220}
             height={15}
             priority

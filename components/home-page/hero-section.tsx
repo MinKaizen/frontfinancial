@@ -11,7 +11,7 @@ export function HeroSection() {
       <Image
         className="w-full max-w-[89px] h-auto"
         src="/frontfinancial-logo-monogram-icon-white.svg"
-        alt="Next.js logo"
+        alt="FRONT Financial Logo"
         width={89}
         height={51}
         priority
