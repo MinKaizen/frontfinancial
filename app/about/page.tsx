@@ -12,6 +12,29 @@ export const metadata: Metadata = {
   description:
     "Learn about FRONT Financial’s mission, approach, and team delivering tech-driven finance outcomes.",
   alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About | FRONT Financial",
+    description:
+      "Learn about FRONT Financial’s mission, approach, and team delivering tech-driven finance outcomes.",
+    url: "/about",
+    siteName: "FRONT Financial",
+    type: "website",
+    images: [
+      {
+        url: "/og-about-min.png",
+        width: 1200,
+        height: 630,
+        alt: "FRONT Financial",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About | FRONT Financial",
+    description:
+      "Learn about FRONT Financial’s mission, approach, and team delivering tech-driven finance outcomes.",
+    images: ["/og-about-min.png"],
+  },
 };
 
 export default function Contact() {

@@ -35,6 +35,29 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  openGraph: {
+    title: "FRONT Financial",
+    description:
+      "Sharp-minded, never-sleeping, tech-driven financial partners who make your money work as hard as we do.",
+    url: "/",
+    siteName: "FRONT Financial",
+    type: "website",
+    images: [
+      {
+        url: "/og-home-min.png",
+        width: 1200,
+        height: 630,
+        alt: "FRONT Financial",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FRONT Financial",
+    description:
+      "Sharp-minded, never-sleeping, tech-driven financial partners who make your money work as hard as we do.",
+    images: ["/og-home-min.png"],
+  },
 };
 
 export default function RootLayout({

@@ -9,6 +9,29 @@ export const metadata: Metadata = {
   description:
     "Get in touch for a confidential, no-obligation consultation with our finance team.",
   alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact Us | FRONT Financial",
+    description:
+      "Get in touch for a confidential, no-obligation consultation with our finance team.",
+    url: "/contact",
+    siteName: "FRONT Financial",
+    type: "website",
+    images: [
+      {
+        url: "/og-contact-min.png",
+        width: 1200,
+        height: 630,
+        alt: "FRONT Financial",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us | FRONT Financial",
+    description:
+      "Get in touch for a confidential, no-obligation consultation with our finance team.",
+    images: ["/og-contact-min.png"],
+  },
 };
 
 export default function Contact() {

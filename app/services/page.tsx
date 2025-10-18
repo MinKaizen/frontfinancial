@@ -12,6 +12,29 @@ export const metadata: Metadata = {
   description:
     "Explore residential, commercial, business, and private finance solutions tailored to your needs.",
   alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Services | FRONT Financial",
+    description:
+      "Explore residential, commercial, business, and private finance solutions tailored to your needs.",
+    url: "/services",
+    siteName: "FRONT Financial",
+    type: "website",
+    images: [
+      {
+        url: "/og-services-min.png",
+        width: 1200,
+        height: 630,
+        alt: "FRONT Financial",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Services | FRONT Financial",
+    description:
+      "Explore residential, commercial, business, and private finance solutions tailored to your needs.",
+    images: ["/og-services-min.png"],
+  },
 };
 
 export default function Contact() {

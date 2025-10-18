@@ -11,6 +11,29 @@ export const metadata: Metadata = {
   description:
     "From first to second mortgages, we structure the deal, secure the right lender, and manage every detail from start to finish.",
   alternates: { canonical: "/services/residential" },
+  openGraph: {
+    title: "Residential Lending | FRONT Financial",
+    description:
+      "From first to second mortgages, we structure the deal, secure the right lender, and manage every detail from start to finish.",
+    url: "/services/residential",
+    siteName: "FRONT Financial",
+    type: "website",
+    images: [
+      {
+        url: "/og-residential-min.png",
+        width: 1200,
+        height: 630,
+        alt: "FRONT Financial",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Residential Lending | FRONT Financial",
+    description:
+      "From first to second mortgages, we structure the deal, secure the right lender, and manage every detail from start to finish.",
+    images: ["/og-residential-min.png"],
+  },
 };
 
 export default function Contact() {

@@ -12,6 +12,29 @@ export const metadata: Metadata = {
   description:
     "Sharp minded, performance focused, tech driven financial partners",
   alternates: { canonical: "/" },
+  openGraph: {
+    title: "FRONT Financial",
+    description:
+      "Sharp minded, performance focused, tech driven financial partners",
+    url: "/",
+    siteName: "FRONT Financial",
+    type: "website",
+    images: [
+      {
+        url: "/og-home-min.png",
+        width: 1200,
+        height: 630,
+        alt: "FRONT Financial",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "FRONT Financial",
+    description:
+      "Sharp minded, performance focused, tech driven financial partners",
+    images: ["/og-home-min.png"],
+  },
 };
 
 export default function Home() {

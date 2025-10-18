@@ -11,6 +11,29 @@ export const metadata: Metadata = {
   description:
     "When the banks can't deliver, we do. Fast, flexible and direct - private lending is built for time-sensitive deals, complex scenarios and borrowers who need smart, tailored solutions.",
   alternates: { canonical: "/services/private" },
+  openGraph: {
+    title: "Private Lending | FRONT Financial",
+    description:
+      "When the banks can't deliver, we do. Fast, flexible and direct - private lending is built for time-sensitive deals, complex scenarios and borrowers who need smart, tailored solutions.",
+    url: "/services/private",
+    siteName: "FRONT Financial",
+    type: "website",
+    images: [
+      {
+        url: "/og-private-min.png",
+        width: 1200,
+        height: 630,
+        alt: "FRONT Financial",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Private Lending | FRONT Financial",
+    description:
+      "When the banks can't deliver, we do. Fast, flexible and direct - private lending is built for time-sensitive deals, complex scenarios and borrowers who need smart, tailored solutions.",
+    images: ["/og-private-min.png"],
+  },
 };
 
 export default function Contact() {
