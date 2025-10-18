@@ -6,6 +6,7 @@ import { ServiceLogosSection } from "@/components/home-page/service-logos-sectio
 import { ContactSection } from "@/components/contact-section";
 import { TestimonialSection } from "@/components/testimonial-section";
 import { FooterSection } from "@/components/footer-section";
+import { JsonldHome } from "@/components/jsonld-home";
 
 export const metadata: Metadata = {
   description:
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      <JsonldHome />
       <HeroSection />
       <AboutSection />
       <ServiceSection />

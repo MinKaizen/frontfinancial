@@ -4,6 +4,7 @@ import { HeroSection } from "./hero-section"
 import { ContactSection } from "@/components/service-template/contact-section"
 import { FaqSection } from "@/components/faq-section"
 import { FooterSection } from "@/components/footer-section"
+import { JsonldServiceBusiness } from "@/components/jsonld-service-business"
 
 export const metadata: Metadata = {
   title: "Business Finance",
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
 export default function Contact() {
   return (
     <div className="bg-white">
+      <JsonldServiceBusiness />
       <StickyHeader bgColor="white" textColor="royal-navy" />
       <HeroSection />
       <ContactSection />
