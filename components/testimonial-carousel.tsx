@@ -16,20 +16,50 @@ export type Testimonial = {
 const DEFAULT_ITEMS: Testimonial[] = [
   {
     quote:
-      "If you're looking for a team that delivers on their promises and truly cares about your outcome, Front Financial is the way to go. We'll definitely be coming back for any future finance needs.",
-    author: "Jayden",
+      "Angus and the Front Financial team are fantastic! They are very knowledgeable about refinancing options and loan applications all with such efficient and great service.",
+    author: "Lou Crowe",
     year: 2025,
   },
   {
     quote:
-      "The process was seamless from start to finish. Clear communication and reliable follow‑through made all the difference for us.",
-    author: "Alex",
-    year: 2024,
+      "Great working with Angus and the team. Angus is always eager to help and answer any questions.",
+    author: "Penny",
+    year: 2025,
   },
   {
     quote:
-      "Professional, prompt, and practical. They helped us make confident decisions without the noise.",
-    author: "Riley",
+      "We can't thank William enough for his exceptional support and determination, which helped us secure our new home when others couldn't. He's truly changed our lives, and we'll never use anyone else. Thank you, William!",
+    author: "Narelle Barnes",
+    year: 2025,
+  },
+  {
+    quote:
+      "Fantastic for supporting me through a complex financing ask with various parties. Prompt in response and always willing to go the extra mile to ensure the financing was as smooth as possible. Will absolutely use again",
+    author: "Ben Devine",
+    year: 2025,
+  },
+  {
+    quote:
+      "The team were very attentive and helpful and their follow up has been very professional.",
+    author: "Assyat David",
+    year: 2025,
+  },
+  {
+    quote:
+      "Angus and the Front Financial Team were fantastic in securing the lowest rate and highest LVR for my investment loan. Their communication throughout the process was excellent. Highly recommend them!",
+    author: "Thomas Panson",
+    year: 2025,
+  },
+  {
+    quote:
+      "We had a great experience with Angus & his team. Knowledgeable, approachable, and responsive, they made the home loan process smooth and stress-free. Highly recommended!",
+    author: "N Hpour",
+    year: 2025,
+  },
+  {
+    quote:
+      "Front Financial was fantastic, guiding me through the entire home buying process and offering great refinancing advice. They were patient, answered all my questions clearly, and I highly recommend them!",
+    author: "Mokash Kanwar",
     year: 2025,
   },
 ];
