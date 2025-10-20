@@ -11,6 +11,7 @@ const kento = localFont({
     { path: "../public/fonts/kento-bold.woff2", weight: "700", style: "normal" },
   ],
   display: "swap",
+  preload: true,
   variable: "--font-kento",
 });
 
