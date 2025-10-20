@@ -37,7 +37,7 @@ export function FooterSection() {
             <Link href={linkedInUrl}>LinkedIn</Link>
           </div>
           <div className="flex flex-col">
-            <Link href="/">Privacy</Link>
+            <Link href="/privacy-policy">Privacy</Link>
             <Link href="/">T&C's</Link>
           </div>
         </div>
