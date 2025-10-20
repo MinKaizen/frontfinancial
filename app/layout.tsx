@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { HubspotTrackingScript } from "@/components/scripts/hubspot-tracking-script";
 import { MetaPixel } from "@/components/scripts/meta-pixel";
+import localFont from "next/font/local";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const kento = localFont({
+  src: [
+    { path: "../public/fonts/kento-light.woff2", weight: "300", style: "normal" },
+    { path: "../public/fonts/kento-regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/kento-bold.woff2", weight: "700", style: "normal" },
+  ],
+  display: "swap",
+  variable: "--font-kento",
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://frontfinancial.com.au";
@@ -66,11 +66,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" className={kento.variable}>
+      <body className="antialiased">
         <MetaPixel />
         {children}
         <HubspotTrackingScript />

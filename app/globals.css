@@ -1,25 +1,3 @@
-@font-face {
-  font-family: "Kento";
-  src: url("/Kento Light.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Kento";
-  src: url("/Kento Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Kento";
-  src: url("/Kento Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
 @import "tailwindcss";
 
 :root {
@@ -31,7 +9,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-body: "Times New Roman", ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans";
-  --font-heading : "Kento", ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans";
+  --font-heading: var(--font-kento), ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans";
   --text-body: 15px;
 
   /* Custom palette from provided image */
