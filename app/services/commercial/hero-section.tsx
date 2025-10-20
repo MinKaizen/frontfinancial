@@ -1,6 +1,8 @@
 import Image from "next/image"
+import type { Service } from "@/types/service-template/Service";
+import { HeroImage } from "@/components/service-template/hero-image";
 
-const service = {
+const service: Service = {
   slug: "commercial",
   title: "Commercial Lending",
   subtitle: "We simplify the complexity.",
@@ -24,28 +26,9 @@ const service = {
 export function HeroSection() {
   return (
     <div className="bg-white text-royal-navy">
-      <div className="grid lg:grid-cols-2 gap-10 px-5 py-15">
+      <div className="grid sm:grid-cols-2 gap-10 px-5 py-15">
         {/* Left Col */}
-        <div className="aspect-[2/1] lg:aspect-[91/92] w-full relative">
-          <Image 
-            className="object-center object-cover w-full h-full"
-            src={`/service-${service.slug}.avif`}
-            alt={service.title}
-            width={ 910 }
-            height={ 920 }
-            priority
-          />
-          <div className="absolute top-0 left-0 w-full h-full grid place-items-center">
-            <Image
-              className="object-center object-cover max-w-[180px] lg:max-w-[50%]"
-              alt={service.title}
-              src={`/f-${service.slug}-white.svg`}
-              width={service.logoWidth}
-              height={60}
-              priority
-            />
-          </div>
-        </div>
+        <HeroImage service={service}/>
 
         {/* Right Col */}
         <div className="grid self-stretch grid-rows-[1fr_auto] gap-10">
