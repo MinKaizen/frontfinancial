@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { StickyHeader } from "@/components/sticky-header"
-import { ContactSection } from "@/components/contact-section"
+import { HeroSection } from "@/components/services-page/hero-section"
 import { ServicesSection } from "@/components/services-page/services-section"
 import { FooterSection } from "@/components/footer-section"
 import { TestimonialSection } from "@/components/testimonial-section"
@@ -142,7 +142,7 @@ export default function Contact() {
         <div className="bg-transparent absolute top-0 left-0 w-full z-10">
           <StickyHeader bgColor="transparent" textColor="white"/>
         </div>
-        <ContactSection />
+        <HeroSection />
       </div>
       <ServicesSection />
       <TestimonialSection />
