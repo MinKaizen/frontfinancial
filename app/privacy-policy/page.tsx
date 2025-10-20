@@ -28,7 +28,7 @@ export default function PrivacyPolicy() {
     <div className="bg-white">
       <StickyHeader bgColor="white" textColor="royal-navy" />
       <main className="container mx-auto px-4 py-16 max-w-4xl">
-        <h1 className="text-4xl font-bold mb-8 text-royal-navy">
+        <h1 className="text-lg font-bold mb-8 text-royal-navy">
           PRIVACY POLICY
         </h1>
 
@@ -41,7 +41,7 @@ export default function PrivacyPolicy() {
             "us," or "our" means Front Financial.
           </p>
 
-          <h2 className="text-2xl font-bold mt-8 mb-4">Personal Information</h2>
+          <h2 className="text-base font-bold mt-8 mb-4">Personal Information</h2>
           <p>
             The types of personal information we may collect about you include:
           </p>
@@ -90,7 +90,7 @@ export default function PrivacyPolicy() {
             or from third parties.
           </p>
 
-          <h2 className="text-2xl font-bold mt-8 mb-4">
+          <h2 className="text-base font-bold mt-8 mb-4">
             Collection and Use of SMS and Phone Numbers
           </h2>
           <p>
@@ -109,7 +109,7 @@ export default function PrivacyPolicy() {
             </li>
           </ul>
 
-          <h3 className="text-xl font-bold mt-6 mb-3">
+          <h3 className="text-base font-bold mt-6 mb-3">
             Consent and Opt-In Requirements
           </h3>
           <p>
@@ -120,14 +120,14 @@ export default function PrivacyPolicy() {
             instructions or contacting us directly.
           </p>
 
-          <h3 className="text-xl font-bold mt-6 mb-3">Opt-Out Mechanism</h3>
+          <h3 className="text-base font-bold mt-6 mb-3">Opt-Out Mechanism</h3>
           <p>
             To stop receiving SMS marketing messages, you may reply with 'STOP'
             or contact us using the details below. We will promptly respect all
             opt-out requests and update our records accordingly.
           </p>
 
-          <h3 className="text-xl font-bold mt-6 mb-3">
+          <h3 className="text-base font-bold mt-6 mb-3">
             Third-Party Disclosure for SMS Communications
           </h3>
           <p>
@@ -138,7 +138,7 @@ export default function PrivacyPolicy() {
             number for any other purpose.
           </p>
 
-          <h2 className="text-2xl font-bold mt-8 mb-4">
+          <h2 className="text-base font-bold mt-8 mb-4">
             Collection and Use of Personal Information
           </h2>
           <p>
@@ -172,7 +172,7 @@ export default function PrivacyPolicy() {
             <li>To consider your employment application.</li>
           </ul>
 
-          <h2 className="text-2xl font-bold mt-8 mb-4">
+          <h2 className="text-base font-bold mt-8 mb-4">
             Disclosure of Personal Information to Third Parties
           </h2>
           <p>We may disclose personal information to:</p>
@@ -210,7 +210,7 @@ export default function PrivacyPolicy() {
             </li>
           </ul>
 
-          <h2 className="text-2xl font-bold mt-8 mb-4">Overseas Disclosure</h2>
+          <h2 className="text-base font-bold mt-8 mb-4">Overseas Disclosure</h2>
           <p>
             We may store personal information overseas. Where we disclose your
             personal information to the third parties listed above, these third
@@ -225,7 +225,7 @@ export default function PrivacyPolicy() {
             Principles.
           </p>
 
-          <h2 className="text-2xl font-bold mt-8 mb-4">
+          <h2 className="text-base font-bold mt-8 mb-4">
             How We Treat Sensitive Information
           </h2>
           <p>
@@ -256,7 +256,7 @@ export default function PrivacyPolicy() {
             <li>If otherwise required or authorised by law.</li>
           </ul>
 
-          <h2 className="text-2xl font-bold mt-8 mb-4">
+          <h2 className="text-base font-bold mt-8 mb-4">
             Your Rights and Controlling Your Personal Information
           </h2>
           <p>
@@ -303,7 +303,7 @@ export default function PrivacyPolicy() {
             facilities provided in the communication.
           </p>
 
-          <h2 className="text-2xl font-bold mt-8 mb-4">Storage and Security</h2>
+          <h2 className="text-base font-bold mt-8 mb-4">Storage and Security</h2>
           <p>
             We are committed to ensuring that the personal information we
             collect, including SMS numbers, is secure. We have put in place
@@ -319,7 +319,7 @@ export default function PrivacyPolicy() {
             Policy.
           </p>
 
-          <h2 className="text-2xl font-bold mt-8 mb-4">
+          <h2 className="text-base font-bold mt-8 mb-4">
             Cookies and Web Beacons
           </h2>
           <p>
@@ -329,7 +329,7 @@ export default function PrivacyPolicy() {
             media feeds as part of our retargeting campaigns.
           </p>
 
-          <h2 className="text-2xl font-bold mt-8 mb-4">
+          <h2 className="text-base font-bold mt-8 mb-4">
             Links to Other Websites
           </h2>
           <p>
@@ -339,14 +339,14 @@ export default function PrivacyPolicy() {
             These websites are not governed by this Privacy Policy.
           </p>
 
-          <h2 className="text-2xl font-bold mt-8 mb-4">Amendments</h2>
+          <h2 className="text-base font-bold mt-8 mb-4">Amendments</h2>
           <p>
             We may update this Privacy Policy at any time by publishing the
             amended version on our Site. We recommend you check our Site regularly
             to ensure you are aware of our current Privacy Policy.
           </p>
 
-          <h2 className="text-2xl font-bold mt-8 mb-4">Contact Us</h2>
+          <h2 className="text-base font-bold mt-8 mb-4">Contact Us</h2>
           <p>
             For any questions or notices, please contact us at:
           </p>
@@ -374,7 +374,7 @@ export default function PrivacyPolicy() {
             <strong>Last Update:</strong> 31.10.2024
           </p>
 
-          <p className="mt-8 text-center font-bold text-xl">
+          <p className="mt-8 font-bold text-base">
             FRONT FINANCIAL
           </p>
         </div>
