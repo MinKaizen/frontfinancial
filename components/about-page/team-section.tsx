@@ -27,6 +27,7 @@ const ProfileCard = ({
           width={450}
           height={514}
           sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33.33vw, (min-width: 640px) 50vw, 100vw"
+          quality={100}
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black/20 hover:opacity-0"></div>
       </div>
