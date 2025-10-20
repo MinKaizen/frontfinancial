@@ -31,15 +31,10 @@ export function FooterSection() {
             <Link href="/contact">Contact Us</Link>
           </div>
         </div>
-        <div className="md:flex flex-row gap-12">
-          <div className="flex flex-col">
-            <Link href={instagramUrl}>Instagram</Link>
-            <Link href={linkedInUrl}>LinkedIn</Link>
-          </div>
-          <div className="flex flex-col">
-            <Link href="/privacy-policy">Privacy</Link>
-            <Link href="/">T&C's</Link>
-          </div>
+        <div className="flex flex-col">
+          <Link href={instagramUrl}>Instagram</Link>
+          <Link href={linkedInUrl}>LinkedIn</Link>
+          <Link href="/privacy-policy">Privacy</Link>
         </div>
       </div>
       <Image
