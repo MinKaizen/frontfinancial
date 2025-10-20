@@ -8,7 +8,7 @@ export function HeroSection() {
         src={"/sydney-sunset.avif"}
         alt=""
         sizes="100vw"
-        quality={75}
+        quality={100}
         width={1920}
         height={577}
         priority
