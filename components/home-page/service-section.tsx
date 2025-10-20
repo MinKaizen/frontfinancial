@@ -22,7 +22,7 @@ export function ServiceSection() {
             <h2 className="uppercase text-[15px] font-bold lg:hidden">At Your Service</h2>
             <div className="grid lg:grid-cols-[1fr_2fr] gap-5">
               <div className="hidden lg:block self-start aspect-[10/11] w-[250px] xl:w-[250px] relative overflow-hidden">
-                <video className="absolute inset-0 w-full h-full object-cover" src="/metropolis-small.mp4" poster="/metropolis.avif" autoPlay loop muted playsInline />
+                <video className="absolute inset-0 w-full h-full object-cover" src="/metropolis-small.mp4" poster="/metropolis-small.avif" autoPlay loop muted playsInline />
               </div>
               <div>
                 <p className="uppercase text-[15px] font-heading font-light mt-[45px] lg:mt-0">From first mortgages to second mortgages, from business loans to refinancing — we’re here to support your financial strategy. Discreet, sharp, and outcome-driven.  Not your everyday broker, but the ones putting in the work every day.</p>
@@ -51,7 +51,7 @@ export function ServiceSection() {
               loading="lazy"
             />
             <div className="aspect-[10/11] w-full overflow-hidden relative">
-              <video className="absolute inset-0 w-full h-full object-cover" src="/metropolis-small.mp4" poster="/metropolis.avif" autoPlay loop muted playsInline />
+              <video className="absolute inset-0 w-full h-full object-cover" src="/metropolis-small.mp4" poster="/metropolis-small.avif" autoPlay loop muted playsInline />
             </div>
           </div>
         </div>

@@ -24,7 +24,7 @@ export function AboutSection() {
         </div>
 
         <div className="w-full hidden lg:block aspect-[10/11] overflow-hidden relative">
-          <video className="absolute inset-0 w-full h-full object-cover" src="/metropolis-large.mp4" poster="/metropolis.avif" autoPlay loop muted playsInline />
+          <video className="absolute inset-0 w-full h-full object-cover" src="/metropolis-large.mp4" poster="/metropolis-large.avif" autoPlay loop muted playsInline />
         </div>
       </div>
     </div>

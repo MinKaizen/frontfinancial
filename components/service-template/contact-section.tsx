@@ -20,7 +20,7 @@ export function ContactSection() {
             </div>
           </div>
           <div className="self-start justify-self-end w-full md:w-[1000px] md:max-w-[500px] mb-15 aspect-[3/2] lg:aspect-[10/11] relative overflow-hidden">
-            <video className="absolute inset-0 w-full h-full object-cover" src="/metropolis-small.mp4" poster="/metropolis.avif" autoPlay loop muted playsInline />
+            <video className="absolute inset-0 w-full h-full object-cover" src="/metropolis-small.mp4" poster="/metropolis-small.avif" autoPlay loop muted playsInline />
           </div>
         </div>
       </div>
