@@ -11,6 +11,9 @@ export function HeroSection() {
         priority
         sizes="100vw"
         className="object-cover"
+        fetchPriority="high"
+        loading="eager"
+        quality={75}
       />
       <div className="absolute left-0 top-0 w-full z-10">
         <StickyHeader></StickyHeader>

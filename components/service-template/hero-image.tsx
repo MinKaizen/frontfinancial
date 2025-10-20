@@ -13,6 +13,8 @@ export function HeroImage({service}: {service: Service}) {
         height={ 920 }
         quality={75}
         priority
+        fetchPriority="high"
+        loading="eager"
       />
       <div className="absolute top-0 left-0 w-full h-full grid place-items-center">
         <Image
