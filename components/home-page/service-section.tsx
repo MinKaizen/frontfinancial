@@ -11,7 +11,7 @@ export function ServiceSection() {
         </div>
         <div className="grid lg:grid-cols-2">
           <Image
-            className="w-full aspect-[448/414] max-w-[448px] justify-self-end hidden lg:block"
+            className="w-full h-auto max-w-[448px] justify-self-end hidden lg:block"
             src="/buildings.avif"
             alt="Sydney Opera House"
             width={450}
@@ -43,11 +43,11 @@ export function ServiceSection() {
           </div>
           <div className="grid grid-cols-[11fr_9fr] gap-5 w-full lg:hidden">
             <Image
-              className="w-full aspect-[300/414]"
-              src="/buildings.avif"
+              className="w-full h-auto object-center object cover"
+              src="/buildings-mobile.avif"
               alt="Sydney Opera House"
-              width={930}
-              height={581}
+              width={540}
+              height={750}
               loading="lazy"
             />
             <div className="aspect-[10/11] w-full overflow-hidden relative">
