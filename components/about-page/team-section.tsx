@@ -99,6 +99,14 @@ export function TeamSection() {
             linkedin="https://www.linkedin.com/in/cooper-sergis/"
           />
           <ProfileCard
+            img="/profile-angus-fraser-700.avif"
+            name="Angus Fraser"
+            title="Lending Partner"
+            phone="0490 392 170"
+            email="angusfraser@frontfinancial.com.au"
+            linkedin="https://www.linkedin.com/in/angus-fraser-7b6795309/"
+          />
+          <ProfileCard
             img="/profile-bill-de-vries-700.avif"
             name="Bill De Vries"
             title="Associate"
