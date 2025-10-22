@@ -111,7 +111,7 @@ export function TeamSection() {
             name="Bill De Vries"
             title="Associate"
             phone="0438 488 500"
-            email="bill@frontfinancial.com.au"
+            email="williamdevries@frontfinancial.com.au"
             linkedin="https://www.linkedin.com/in/willdevries/"
           />
           <ProfileCard
