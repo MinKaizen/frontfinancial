@@ -119,7 +119,7 @@ export function TeamSection() {
             name="Will Gerstl"
             title="Associate"
             phone="0424 383 296"
-            email="williamgerstl"
+            email="williamgerstl@frontfinancial.com.au"
             linkedin="https://www.linkedin.com/in/will-gerstl-935b19231/"
           />
           <ProfileCard
