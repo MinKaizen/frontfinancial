@@ -79,7 +79,7 @@ export function TeamSection() {
             name="Dylan Tennyson"
             title="Lending Partner"
             phone="0400 518 130"
-            email="dylantennyson"
+            email="dylantennyson@frontfinancial.com.au"
             linkedin="https://www.linkedin.com/in/dylan-tennyson-852497267/?originalSubdomain=au"
           />
           <ProfileCard
