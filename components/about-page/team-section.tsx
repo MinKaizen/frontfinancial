@@ -75,14 +75,6 @@ export function TeamSection() {
             linkedin="https://www.linkedin.com/in/ryan-sweeney-39a389191/"
           />
           <ProfileCard
-            img="/profile-lachlan-pegler-700.avif"
-            name="Lachlan Pegler"
-            title="Lending Partner"
-            phone="0415 605 535"
-            email="lachlanpegler@frontfinancial.com.au"
-            linkedin="https://www.linkedin.com/in/lachlan-pegler-b352b9309/?originalSubdomain=au"
-          />
-          <ProfileCard
             img="/profile-dylan-tennyson-700.avif"
             name="Dylan Tennyson"
             title="Lending Partner"
@@ -97,6 +89,14 @@ export function TeamSection() {
             phone="0406 135 505"
             email="coopersergis@frontfinancial.com.au"
             linkedin="https://www.linkedin.com/in/cooper-sergis/"
+          />
+          <ProfileCard
+            img="/profile-lachlan-pegler-700.avif"
+            name="Lachlan Pegler"
+            title="Lending Partner"
+            phone="0415 605 535"
+            email="lachlanpegler@frontfinancial.com.au"
+            linkedin="https://www.linkedin.com/in/lachlan-pegler-b352b9309/?originalSubdomain=au"
           />
           <ProfileCard
             img="/profile-angus-fraser-700.avif"
