@@ -29,27 +29,27 @@ export function ProcessSection() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 mt-10">
           <ProcessCard
             img="/process1.avif"
-            title="One. Consultation & Understanding"
+            title="1. Consultation & Understanding"
             description="We define your goals with precision: focused, actionable, and designed to deliver."
           />
           <ProcessCard
             img="/process2.avif"
-            title="Two. Research & Analysis"
+            title="2. Research & Analysis"
             description="We do all the due diligence on your situation, analyse it from multiple angles, review our internal funding structures, and uncover the smartest opportunities available."
           />
           <ProcessCard
             img="/process3.avif"
-            title="Three. Presenting Options."
+            title="3. Presenting Options."
             description="Only the best options. Expertly selected. Positioned for maximum advantage."
           />
           <ProcessCard
             img="/process4.avif"
-            title="Four. Execution & Settlement."
+            title="4. Execution & Settlement."
             description="Applications, approvals, and settlement handled flawlessly. Every detail managed to perfection."
           />
           <ProcessCard
             img="/process5.avif"
-            title="Five. Post-Settlement Support."
+            title="5. Post-Settlement Support."
             description="Our commitment extends beyond settlement. We provide ongoing insight and strategy to protect and grow your position."
           />
         </div>
