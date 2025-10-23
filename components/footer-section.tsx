@@ -7,13 +7,15 @@ export function FooterSection() {
 
   return (
     <div className="bg-royal-navy grid py-10 px-5 min-h-[600px] md:grid-cols-[1fr_auto_1fr] content-stretch gap-y-8 text-tan">
-      <Image
-        className="w-full max-w-[331px] h-auto justify-self-center self-center md:hidden"
-        src="/frontfinancial-logo-script-tan.svg"
-        alt="Front Financial logo"
-        width={331}
-        height={53}
-      />
+      <Link href="/" className="justify-self-center self-center md:hidden">
+        <Image
+          className="w-full max-w-[331px] h-auto"
+          src="/frontfinancial-logo-script-tan.svg"
+          alt="Front Financial logo"
+          width={331}
+          height={53}
+        />
+      </Link>
       <div className="flex flex-row md:flex-col justify-between justify-self-stretch justify-items-start">
         <div className="flex flex-col gap-6">
           <div className="flex flex-col">
@@ -42,14 +44,16 @@ export function FooterSection() {
           </div>
         </div>
       </div>
-      <Image
-        className="hidden md:block w-full max-w-[331px] h-auto justify-self-center self-center"
-        src="/frontfinancial-logo-script-tan.svg"
-        alt="Front Financial logo"
-        width={331}
-        height={53}
-        loading="lazy"
-      />
+      <Link href="/" className="hidden md:block w-auto justify-self-center self-center">
+        <Image
+          className="w-full max-w-[331px] h-auto"
+          src="/frontfinancial-logo-script-tan.svg"
+          alt="Front Financial logo"
+          width={331}
+          height={53}
+          loading="lazy"
+        />
+      </Link>
       <div className="grid justify-self-end gap-x-20">
         <p className="text-right leading-none justify-self-end">Sharp-minded, never-sleeping, tech-driven <br className="hidden md:inline-block" /> financial partners.</p>
         <div className="justify-self-end self-end">
