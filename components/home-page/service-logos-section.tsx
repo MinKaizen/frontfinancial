@@ -1,10 +1,19 @@
 import Image from "next/image";
+import Link from "next/link";
 
-const logos = [
-  { src: "/f-residential.svg", alt: "Residential", width: 228, height: 60 },
-  { src: "/f-commercial.svg", alt: "Commercial", width: 224, height: 60 },
-  { src: "/f-business.svg", alt: "Business", width: 183, height: 60 },
-  { src: "/f-private.svg", alt: "Private", width: 154, height: 60 },
+type Logo = {
+  src: string,
+  alt: string,
+  width: number,
+  height: number,
+  url: string,
+}
+
+const logos: Logo[] = [
+  { src: "/f-residential.svg", alt: "Residential", width: 228, height: 60, url: "/services/residential" },
+  { src: "/f-commercial.svg", alt: "Commercial", width: 224, height: 60, url: "/services/commercial"},
+  { src: "/f-busines:.svg", alt: "Business", width: 183, height: 60, url: "/services/business"},
+  { src: "/f-private.svg", alt: "Private", width: 154, height: 60, url: "/services/private"},
 ];
 
 export function ServiceLogosSection() {
@@ -17,7 +26,8 @@ export function ServiceLogosSection() {
           <div className="flex items-center">
             <div className="marquee-track flex flex-nowrap items-center gap-6 md:gap-8 will-change-transform">
               {sequence.map((logo, i) => (
-                <div
+                <Link
+                  href={logo.url}
                   key={`${logo.src}-${i}`}
                   className="flex-none w-[25vw] xl:w-[20vw] flex justify-center"
                   aria-hidden={i >= logos.length ? true : undefined}
@@ -30,7 +40,7 @@ export function ServiceLogosSection() {
                     height={logo.height}
                     loading="lazy"
                   />
-                </div>
+                </Link>
               ))}
             </div>
           </div>
