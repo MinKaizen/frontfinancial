@@ -40,7 +40,6 @@ export function FooterSection() {
           </div>
           <div className="flex flex-col">
             <Link href="/privacy-policy">Privacy</Link>
-            <Link href="/">T&C's</Link>
           </div>
         </div>
       </div>
