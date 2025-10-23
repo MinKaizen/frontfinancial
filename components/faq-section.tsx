@@ -20,7 +20,7 @@ export function FaqSection({bgColor = "white", textColor = "royal-navy"}: Props)
             <p className="mt-[1.5em]">Luckily for you, the answer lives on our contact page</p>
           </div>
           <Link href="/contact" className="block w-max relative cursor-pointer mt-[45px] lg:mt-5 xl:mt-[45px]">
-            <div className="pr-3 text-[14px]">Explore</div>
+            <div className="pr-3 text-[14px]">Contact Us</div>
             <div
               className="arrow absolute left-0 bottom-3"
               style={{
