@@ -12,7 +12,7 @@ type Logo = {
 const logos: Logo[] = [
   { src: "/f-residential.svg", alt: "Residential", width: 228, height: 60, url: "/services/residential" },
   { src: "/f-commercial.svg", alt: "Commercial", width: 224, height: 60, url: "/services/commercial"},
-  { src: "/f-busines:.svg", alt: "Business", width: 183, height: 60, url: "/services/business"},
+  { src: "/f-business.svg", alt: "Business", width: 183, height: 60, url: "/services/business"},
   { src: "/f-private.svg", alt: "Private", width: 154, height: 60, url: "/services/private"},
 ];
 
