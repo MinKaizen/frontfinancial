@@ -3,6 +3,7 @@ import "./globals.css";
 import { HubspotTrackingScript } from "@/components/scripts/hubspot-tracking-script";
 import { MetaPixel } from "@/components/scripts/meta-pixel";
 import localFont from "next/font/local";
+import IntercomFin from "@/components/intercom-fin";
 
 const kento = localFont({
   src: [
@@ -72,6 +73,7 @@ export default function RootLayout({
         <MetaPixel />
         {children}
         <HubspotTrackingScript />
+        <IntercomFin></IntercomFin>
       </body>
     </html>
   );

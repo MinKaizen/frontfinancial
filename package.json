@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@hubspot/api-client": "^13.3.0",
+    "@intercom/messenger-js-sdk": "^0.0.18",
     "framer-motion": "^12.23.22",
     "next": "15.5.2",
     "react": "19.1.0",
