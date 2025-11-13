@@ -133,9 +133,8 @@ export default function TestimonialCarousel({
               if (swipe < -swipeConfidenceThreshold) paginate(1);
               else if (swipe > swipeConfidenceThreshold) paginate(-1);
             }}
-            className="max-w-2xl text-center px-2">
-            <span className="block leading-snug">
-              “{current.quote}”
+            className="text-center px-2">
+            <span className="block leading-snug" dangerouslySetInnerHTML={{ __html: `"${current.quote}"` }}>
             </span>
           </motion.blockquote>
         </AnimatePresence>
