@@ -14,54 +14,32 @@ export type Testimonial = {
 };
 
 const DEFAULT_ITEMS: Testimonial[] = [
+
   {
-    quote:
-      "Angus and the Front Financial team are fantastic! They are very knowledgeable about refinancing options and loan applications all with such efficient and great service.",
-    author: "Lou Crowe",
-    year: 2025,
+    "quote": "From the first introduction and Zoom meeting Ryan was very helpful, informative and thorough, we felt ease and relief from that moment. Everything was laid out and a plan was created to move ahead refinancing and consolidating our debts. We were introduced to Dylan, one of Ryan’s brokers. Dylan was amazing and their whole team were. Every phone call from Dylan he kept us informed and helped us get everything sorted and put together, we had a laugh and chat also which made it a pleasant experience.",
+    "author": "Nigel Underdown",
+    "year": 2025
   },
   {
-    quote:
-      "Great working with Angus and the team. Angus is always eager to help and answer any questions.",
-    author: "Penny",
-    year: 2025,
+    "quote": "I have to say a huge thank you once again to Ryan, Bridgette, Jimmy and the team at Front Financial. Ryan, in particular, went above and beyond for us. Nothing was any trouble, including messages and phone calls at all hours. When we were feeling stressed, Ryan reassured us, which gave us peace of mind. It felt like we were dealing with a close family member when working with Ryan. My wife and I would highly recommend Ryan and his team at Front Financial. Don’t even think about going anywhere else. This fantastic team will walk you through it all and be there for you whenever you need a little extra support. Thank you so much, Ryan, you’re a gem.",
+    "author": "Mark Holden",
+    "year": 2025
   },
   {
-    quote:
-      "We can't thank William enough for his exceptional support and determination, which helped us secure our new home when others couldn't. He's truly changed our lives, and we'll never use anyone else. Thank you, William!",
-    author: "Narelle Barnes",
-    year: 2025,
+    "quote": "Cooper and his team were an absolute pleasure to work with. Navigating the complexities of buying and selling a property at the same time – while juggling a few external curveballs – could've easily been a stressful experience. But Cooper’s calm, solution-focused approach and consistent communication kept everything on track. No issue was too hard, no detail overlooked. In the end, thanks to his efforts, I walked away with the best possible result. Highly recommended.",
+    "author": "Derek Foltin",
+    "year": 2025
   },
   {
-    quote:
-      "Fantastic for supporting me through a complex financing ask with various parties. Prompt in response and always willing to go the extra mile to ensure the financing was as smooth as possible. Will absolutely use again",
-    author: "Ben Devine",
-    year: 2025,
+    "quote": "Will and his team went beyond and above in our NOT so simple refinance. The level of professionalism and communication was second to none. They kept us informed at every stage, reassured us at all times and it was never an issue if we had 'just another question'. Truly hard to put into words how easy they made the process for us. We cannot recommend them any higher and we will be using them going forward for not only our personal finances but also our business. THANK YOU WILL AND THE WHOLE TEAM, it has been an absolute pleasure.",
+    "author": "Tracie Harding",
+    "year": 2025
   },
   {
-    quote:
-      "The team were very attentive and helpful and their follow up has been very professional.",
-    author: "Assyat David",
-    year: 2025,
-  },
-  {
-    quote:
-      "Angus and the Front Financial Team were fantastic in securing the lowest rate and highest LVR for my investment loan. Their communication throughout the process was excellent. Highly recommend them!",
-    author: "Thomas Panson",
-    year: 2025,
-  },
-  {
-    quote:
-      "We had a great experience with Angus & his team. Knowledgeable, approachable, and responsive, they made the home loan process smooth and stress-free. Highly recommended!",
-    author: "N Hpour",
-    year: 2025,
-  },
-  {
-    quote:
-      "Front Financial was fantastic, guiding me through the entire home buying process and offering great refinancing advice. They were patient, answered all my questions clearly, and I highly recommend them!",
-    author: "Mokash Kanwar",
-    year: 2025,
-  },
+    "quote": "Dylan Tennyson and the team at FRONT Financial provided an unbeatable experience. We had initially taken our financing needs to 3 different providers. After meeting with Dylan, the decision to work with FRONT Financial was a very easy one. The team brings great energy, and go above and beyond to ensure you have everything you need. They were extremely helpful in sharing their own professional networks with us, and continue to do so post-purchase. I gladly recommend this team to anyone who enquires.",
+    "author": "Jesse Mitton",
+    "year": 2025
+  }
 ];
 
 export default function TestimonialCarousel({
