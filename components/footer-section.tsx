@@ -57,8 +57,8 @@ export function FooterSection() {
         <p className="text-right leading-none justify-self-end">Sharp-minded, never-sleeping, tech-driven <br className="hidden md:inline-block" /> financial partners.</p>
         <div className="justify-self-end self-end text-right">
           <div>Front Financial 2025©</div>
-          <div>WRBS CAPITAL PTY LTD</div>
-          <div>ABN 606 7522 0032</div>
+          <div>WRBS GP PTY LTD</div>
+          <div>ABN 76 687 728 221</div>
         </div>
       </div>
     </div>
