@@ -122,14 +122,6 @@ export function TeamSection() {
             email="williamgerstl@frontfinancial.com.au"
             linkedin="https://www.linkedin.com/in/will-gerstl-935b19231/"
           />
-          <ProfileCard
-            img="/profile-antoine-gizardin-700.avif"
-            name="Antoine Gizardin"
-            title="Associate"
-            phone="0423 938 756"
-            email="antoinegizardin@frontfinancial.com.au"
-            linkedin="https://www.linkedin.com/in/antoine-gizardin-a23874243/"
-          />
         </div>
       </div>
     </div>
