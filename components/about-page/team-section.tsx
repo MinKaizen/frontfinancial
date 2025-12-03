@@ -101,7 +101,7 @@ export function TeamSection() {
           <ProfileCard
             img="/profile-angus-fraser-700.avif"
             name="Angus Fraser"
-            title="Lending Partner"
+            title="Senior Associate"
             phone="0490 392 170"
             email="angusfraser@frontfinancial.com.au"
             linkedin="https://www.linkedin.com/in/angus-fraser-7b6795309/"
