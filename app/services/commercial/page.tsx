@@ -49,12 +49,12 @@ const jsonLd = {
 export const metadata: Metadata = {
   title: "Commercial Lending",
   description:
-    "From development funding to second mortgages and short-term secured finance, we create commercial loans that actually work. Complext projects, tight deadlines, high stakes. We handle it all so you can focus on growth and execution.",
+    "From development funding to second mortgages and short-term secured finance, we create commercial loans that actually work. Complex projects, tight deadlines, high stakes. We handle it all so you can focus on growth and execution.",
   alternates: { canonical: "/services/commercial" },
   openGraph: {
     title: "Commercial Lending | FRONT Financial",
     description:
-      "From development funding to second mortgages and short-term secured finance, we create commercial loans that actually work. Complext projects, tight deadlines, high stakes. We handle it all so you can focus on growth and execution.",
+      "From development funding to second mortgages and short-term secured finance, we create commercial loans that actually work. Complex projects, tight deadlines, high stakes. We handle it all so you can focus on growth and execution.",
     url: "/services/commercial",
     siteName: "FRONT Financial",
     type: "website",
@@ -71,7 +71,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Commercial Lending | FRONT Financial",
     description:
-      "From development funding to second mortgages and short-term secured finance, we create commercial loans that actually work. Complext projects, tight deadlines, high stakes. We handle it all so you can focus on growth and execution.",
+      "From development funding to second mortgages and short-term secured finance, we create commercial loans that actually work. Complex projects, tight deadlines, high stakes. We handle it all so you can focus on growth and execution.",
     images: ["/og-commercial-min.png"],
   },
   other: {

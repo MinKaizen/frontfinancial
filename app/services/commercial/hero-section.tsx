@@ -38,7 +38,7 @@ export function HeroSection() {
             <div className="mt-7 lg:mt-[40px] xl:mt-[75px] text-[18px]">
               Bid deals demand smart structures - and we deliver.
               <div className="max-w-[515px]">
-                From development funding to second mortgages and short-term secured finance, we create commercial loans that actually work. Complext projects, tight deadlines, high stakes. We handle it all so you can focus on growth and execution.
+                From development funding to second mortgages and short-term secured finance, we create commercial loans that actually work. Complex projects, tight deadlines, high stakes. We handle it all so you can focus on growth and execution.
               </div>
               Fast, precise and results-driven
             </div>
