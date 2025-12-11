@@ -445,7 +445,7 @@ export default function PropertyEquityForm() {
           {status === 'ok' && (
             <>
               <p className="font-heading text-center text text-tan" role="status">
-                Thanks, you're all set. <br /><br />We look forward to speaking with you. One of our team members will be in touch within 24 hours to confirm your details and check your eligibility. <br /><br />If your request is urgent and you want to express your application please fill in this form and our team will book you in for a discovery call <br /><br /><a href="" className="underline font-bold">Express Form</a>
+                Thanks, you're all set. <br /><br />We look forward to speaking with you. One of our team members will be in touch within 24 hours to confirm your details and check your eligibility. <br /><br />If your request is urgent and you want to express your application please fill in this form and our team will book you in for a discovery call <br /><br /><a href="https://app.middle.finance/ref/94255485-f0db-4f17-b14c-c86b32934c06" className="underline font-bold">Express Form</a>
               </p>
             </>
           )}
