@@ -10,7 +10,7 @@ type StepProps = {
 
 const StepCard = (props: { step: StepProps }) => {
   return (
-    <article className="grid justify-items-center bg-[#666573] w-full max-w-[180px] h-[200px] rounded-2xl py-5 px-5">
+    <article className="grid justify-items-center bg-soft-navy w-full max-w-[180px] h-[200px] rounded-2xl py-5 px-5">
       <h3 className="text-sm text-white">{props.step.title}</h3>
       <div className="text-sm text-white" dangerouslySetInnerHTML={{ __html: props.step.description }}></div>
     </article>
@@ -53,13 +53,13 @@ const steps: StepProps[] = [
 
 export function FaqProcessSection() {
   return (
-    <div className="bg-tan-light text-black">
+    <div className="bg-tan-light text-charcoal">
       <div className="grid lg:grid-cols-2">
         <div className="px-5 py-8 lg:py-12 xl:py-18">
           <h2 className="mb-7 text-body">Frequently asked questions.</h2>
           <Faq />
         </div>
-        <div className="w-full grid place-items-center px-4 py-14 bg-[#3F404F]">
+        <div className="w-full grid place-items-center px-4 py-14 bg-royal-navy">
           <div className="grid gap-1 md:gap-3 grid-cols-[1fr_auto_1fr] items-center content-center w-auto justify-center justify-items-center">
             <StepCard step={steps[0]} />
             <div>

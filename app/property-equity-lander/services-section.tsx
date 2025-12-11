@@ -6,7 +6,7 @@ export function ServicesSection() {
     <>
       <div className="bg-white">
         <div className="px-5 py-8 lg:py-12 xl:py-18">
-          <h2 className="text-body uppercase text-black">Our Services For You</h2>
+          <h2 className="text-body uppercase text-charcoal">Our Services For You</h2>
 
           <div className="grid items-stretch content-stretch md:grid-cols-2 xl:grid-cols-4 gap-7 mt-5">
             {services.map((service, index) => (

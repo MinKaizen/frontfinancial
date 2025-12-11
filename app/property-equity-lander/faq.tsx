@@ -49,7 +49,7 @@ export function Faq() {
               animate={{ rotate: activeIndex === index ? 180 : 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
-              <ChevronDown className="text-neutral-600" />
+              <ChevronDown className="text-charcoal" />
             </motion.div>
           </button>
           <AnimatePresence initial={false}>

@@ -2,7 +2,7 @@
 export function ReviewsSection() {
   return (
     <>
-      <div className="bg-neutral-100" style={{
+      <div className="bg-[#f8f8f8]" style={{
         fontWeight: 400,
         fontSize: "14px",
         lineHeight: "18px",
