@@ -18,7 +18,7 @@ export function ServiceCard({ content, backgroundImg, innerImg, alt, width }: Pr
     <>
       <div className="bg-off-white p-1 lg:p-2 h-full">
         <div
-          className="w-full h-full grid justify-items-center gap-5 py-6 px-6 bg-no-repeat bg-cover bg-center grid-rows-[auto_1fr_auto]"
+          className="w-full h-full grid justify-items-center gap-5 py-6 px-6 bg-no-repeat bg-cover bg-center grid-rows-[auto_1fr_auto] md:aspect-4/3 xl:aspect-34/41"
           style={backgroundStyle}
         >
           <Image
