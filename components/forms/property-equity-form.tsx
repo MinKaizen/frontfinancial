@@ -76,8 +76,8 @@ const validateField = (field: keyof FormData, value: string): string | null => {
 
 const SELECT_OPTIONS = {
   ownsProperty: [
-    { value: 'Yes', label: 'Yes' },
-    { value: 'No', label: 'No' },
+    { value: 'Yes', label: 'Yes, I own property' },
+    { value: 'No', label: 'No, I do not own property' },
   ],
   businessStructure: [
     { value: 'Sole Trader', label: 'Sole Trader' },
@@ -94,10 +94,9 @@ const SELECT_OPTIONS = {
     { value: 'Over $1,000,000', label: 'Over $1,000,000' },
   ],
   urgency: [
-    { value: 'Immediate (within a week)', label: 'Immediate (within a week)' },
-    { value: 'Soon (1-4 weeks)', label: 'Soon (1-4 weeks)' },
-    { value: 'Planning ahead (1-3 months)', label: 'Planning ahead (1-3 months)' },
-    { value: 'Just exploring options', label: 'Just exploring options' },
+    { value: 'Within a week', label: 'Within a week' },
+    { value: 'Within a month', label: 'Within a month' },
+    { value: 'Within 3 months', label: 'Within 3 months' },
   ],
 } as const;
 
