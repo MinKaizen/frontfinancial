@@ -6,25 +6,45 @@ import { AnimatePresence, motion } from "framer-motion";
 
 type Faq = {
   question: string,
-  answer: string,
+  answer: React.ReactNode,
 }
 
 const faqs: Faq[] = [
   {
     question: `What exactly is "using my property equity" to access funds?`,
-    answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at urna pellentesque, vehicula urna quis, imperdiet libero. Aenean maximus sem id tempor accumsan. Integer nec ligula laoreet, blandit leo et, fermentum turpis.`,
+    answer: <p>It means unlocking the available equity in your home, investment property, or land to raise capital - without needing full tax returns or traditional bank paperwork. We use your property as security, allowing you to access funds quickly for things like ATO debt, cash flow, consolidating liabilities, or supporting your business.</p>,
   },
   {
     question: `How do I know if I qualify?`,
-    answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at urna pellentesque, vehicula urna quis, imperdiet libero. Aenean maximus sem id tempor accumsan. Integer nec ligula laoreet, blandit leo et, fermentum turpis.`,
+    answer: <>
+      <p>You likely qualify if you:</p>
+      <ul className="list-disc list-inside space-y-1 my-2">
+        <li>Own real estate with usable equity</li>
+        <li>Are self-employed or run a small business</li>
+        <li>Have been declined by a bank</li>
+        <li>Need quick access to funds for ATO, cash flow, or restructuring</li>
+      </ul>
+      <p>Our only firm deal-breaker: no property security = no approval. If you own property, we can usually structure a solution.</p>
+    </>,
   },
   {
     question: `How fast can you get me approved?`,
-    answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at urna pellentesque, vehicula urna quis, imperdiet libero. Aenean maximus sem id tempor accumsan. Integer nec ligula laoreet, blandit leo et, fermentum turpis.`,
+    answer: <p>Once we receive your documents, we can typically provide an outcome within days. Most clients move from first enquiry to settlement within 2–4 weeks, depending on complexity and document turnaround. Speed and certainty are our top priorities.</p>,
   },
   {
     question: `What other services do you provide?`,
-    answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at urna pellentesque, vehicula urna quis, imperdiet libero. Aenean maximus sem id tempor accumsan. Integer nec ligula laoreet, blandit leo et, fermentum turpis.`,
+    answer: <>
+      <p>Alongside property equity lending, we help clients with:</p>
+      <ul className="list-disc list-inside space-y-1 my-2">
+        <li>ATO debt solutions</li>
+        <li>Business debt consolidation</li>
+        <li>Short-term bridging loans</li>
+        <li>Cash flow support</li>
+        <li>Business restructuring and advisory</li>
+        <li>Preparing for refinance once your position improves</li>
+      </ul>
+      <p>Please reach out and we'll be able to see if we can help you</p>
+    </>
   },
 ]
 
