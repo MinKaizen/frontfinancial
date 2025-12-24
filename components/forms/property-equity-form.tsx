@@ -444,8 +444,21 @@ export default function PropertyEquityForm() {
 
           {status === 'ok' && (
             <>
-              <p className="font-heading text-center text text-tan" role="status">
-                Thanks, you're all set. <br /><br />We look forward to speaking with you. One of our team members will be in touch within 24 hours to confirm your details and check your eligibility. <br /><br />If your request is urgent and you want to express your application please fill in this form and our team will book you in for a discovery call <br /><br /><a href="https://app.middle.finance/ref/94255485-f0db-4f17-b14c-c86b32934c06" className="underline font-bold">Express Form</a>
+              <p className="font-heading text-center text text-tan mb-6" role="status">
+                Thanks, you're all set. <br /><br />We look forward to speaking with you. One of our team members will be in touch within 24 hours to confirm your details and check your eligibility. <br /><br /> In the meantime, please watch the video below which explains what we do, our process and what do expect.
+              </p>
+              <div className="aspect-9/11 md:aspect-5/3 w-full bg-black rounded-lg relative overflow-hidden">
+                <iframe
+                  src="https://player.vimeo.com/video/1149088930?h=8111d46d67&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=0"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+                  title="Placeholder Video"
+                />
+              </div>
+              <p className="font-heading text-center text text-tan mt-6" role="status">
+                If your request is urgent and you want to express your application please fill in this form and our team will book you in for a discovery call <br /><br /><a href="https://app.middle.finance/ref/94255485-f0db-4f17-b14c-c86b32934c06" className="underline font-bold">Express Form</a>
               </p>
             </>
           )}
