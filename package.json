@@ -11,10 +11,10 @@
     "@hubspot/api-client": "^13.3.0",
     "framer-motion": "^12.23.22",
     "lucide-react": "^0.556.0",
-    "next": "15.5.7",
+    "next": "~16.1.1",
     "posthog-js": "^1.310.1",
-    "react": "19.1.2",
-    "react-dom": "19.1.2",
+    "react": "~19.2.3",
+    "react-dom": "~19.2.3",
     "zod": "^4.1.9"
   },
   "devDependencies": {
