@@ -46,7 +46,7 @@ const steps: StepProps[] = [
     description: `Proposal and Approval`
   },
   {
-    title: `Step 1`,
+    title: `Step 4`,
     description: `Discovery Call`
   },
 ]
