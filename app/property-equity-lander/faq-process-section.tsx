@@ -35,19 +35,19 @@ const LongArrowDown = ({ className }: { className?: string }) => {
 const steps: StepProps[] = [
   {
     title: `Step 1`,
-    description: `Fill out enquiry form`
+    description: `Fill out an enquiry form.`
   },
   {
     title: `Step 2`,
-    description: `A. Introduction 15 Minute Call<br>B. Fill in express form`
+    description: `Introduction call & express forms.`
   },
   {
     title: `Step 3`,
-    description: `Proposal and Approval`
+    description: `Proposal & approval.`
   },
   {
     title: `Step 4`,
-    description: `Discovery Call`
+    description: `Discovery call.`
   },
 ]
 
