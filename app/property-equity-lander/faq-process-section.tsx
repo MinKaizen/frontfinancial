@@ -11,8 +11,8 @@ type StepProps = {
 const StepCard = (props: { step: StepProps }) => {
   return (
     <article className="grid justify-items-center bg-soft-navy w-full max-w-[180px] h-[200px] rounded-2xl py-5 px-5">
-      <h3 className="text-sm text-white">{props.step.title}</h3>
-      <div className="text-sm text-white" dangerouslySetInnerHTML={{ __html: props.step.description }}></div>
+      <h3 className="text-sm text-white text-center">{props.step.title}</h3>
+      <div className="text-sm text-white text-center" dangerouslySetInnerHTML={{ __html: props.step.description }}></div>
     </article>
   )
 }
