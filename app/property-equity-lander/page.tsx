@@ -78,10 +78,10 @@ export default function Home() {
   return (
     <>
       <VideoSection />
+      <FormSection />
       <FaqProcessSection />
       <ServicesSection />
       {/* <ReviewsSection /> */}
-      <FormSection />
       <FooterSection />
     </>
   );
