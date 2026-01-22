@@ -30,7 +30,7 @@ export function VideoSection() {
           <Script src="https://player.vimeo.com/api/player.js" />
 
           <Link href="#inquire_form" className="block w-max relative cursor-pointer">
-            <div className="px-3">Inquire</div>
+            <div className="px-3">Enquire</div>
             <div
               className="arrow absolute left-0 bottom-3"
               style={{

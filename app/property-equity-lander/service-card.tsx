@@ -30,7 +30,7 @@ export function ServiceCard({ content, backgroundImg, innerImg, alt, width }: Pr
           />
           <div className="text-sm xl:text-base text-white leading-normal" dangerouslySetInnerHTML={{ __html: content }}></div>
           <Link href="#inquire_form" className="block w-max relative cursor-pointer">
-            <div className="px-3">Inquire</div>
+            <div className="px-3">Enquire</div>
             <div
               className="arrow absolute left-0 bottom-3"
               style={{

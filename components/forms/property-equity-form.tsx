@@ -406,7 +406,7 @@ export default function PropertyEquityForm() {
 
                 <SelectField
                   id="urgency"
-                  label="How urgent is your inquiry?"
+                  label="How urgent is your enquiry?"
                   value={formData.urgency}
                   onChange={(value) => updateField('urgency', value)}
                   onBlur={() => handleBlur('urgency')}
