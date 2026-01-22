@@ -80,7 +80,7 @@ export default function Home() {
       <VideoSection />
       <FaqProcessSection />
       <ServicesSection />
-      <ReviewsSection />
+      {/* <ReviewsSection /> */}
       <FormSection />
       <FooterSection />
     </>
